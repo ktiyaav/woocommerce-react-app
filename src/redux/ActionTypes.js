@@ -2,3 +2,6 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const CART_FAILED = 'CART_FAILED';
 export const CART_LOADING = 'CART_LOADING';
+
+export const ADD_ADDRESS = 'ADD_ADDRESS';
+export const ADD_ORDERS = 'ADD_ORDERS';

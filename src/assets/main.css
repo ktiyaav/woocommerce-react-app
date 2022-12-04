@@ -93,6 +93,9 @@ p {
     padding: 0 15px 0 15px;
     margin-top: 15px;
 }
+.mb-120{
+    margin-bottom:120px
+}
 .bg-white{
     background-color: #fff;
 }

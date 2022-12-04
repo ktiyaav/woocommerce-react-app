@@ -458,18 +458,82 @@ button{
     padding: 20px 10px;
 }
 .proceed-checkout{
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ed6b00;
-    text-align: center;
+    -webkit-box-shadow: 0 -2px 3px rgb(40 44 63 / 10%);
+    box-shadow: 0 -2px 3px rgb(40 44 63 / 10%);
+    z-index: 9;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 142px;
+    background: #fff;
+    overflow: hidden;
+    border-top: 1px solid #f4f4f5;
+    z-index: 9999999999999;
+}
+.proceed-checkout .cart-pay{
     background-color: #ed6b00;
     color: #fff;
-    font-weight: 600;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+    float: none;
+    padding: 20px;
+    font-weight: 800;
     text-transform: uppercase;
-    bottom: -10px;
-    margin: 20px 10px;
+}
+.proceed-checkout .icon{
+    width: 50px;
+    height: 100%;
+    max-height: 50px;
+    border: 1px solid #bebfc5;
+    font-size: 16px;
+    display: flex;
+    position: relative;
+    padding: 15px;
+}
+.proceed-checkout .icon .svg{
+    height: 20px;
+}
+.proceed-checkout .address{
+    padding: 16px 16px 16px 16px;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100%;
+    max-height: 92px;
 }
 
+.proceed-checkout .title{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600;
+}
+.proceed-checkout p{
+    font-size: 0.8rem;
+}
+.proceed-checkout .second{
+    padding-left:16px;
+    background-color: #e1e1e4;
+}
+.proceed-checkout .total{
+    font-weight: 800;
+    margin: auto;
+}
+.proceed-checkout .address-change{
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+    background-color: #30791a;
+    color: #fff;
+    height: 18px;
+    font-size: 11px;
+    text-align: center;
+}
 .cart .order-query{
     border-top: 1px solid #e9e9eb;
     background-color: #fff;
