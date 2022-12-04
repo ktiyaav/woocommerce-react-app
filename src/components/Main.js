@@ -40,7 +40,7 @@ const mapStateToProps = (state) => {
 class Main extends Component{
     render(){
         return(
-            <div>
+            <>
             <Navbar />
             <Bottom />
             <Routes location={this.props.location}>
@@ -51,7 +51,7 @@ class Main extends Component{
               <Route exact path="/cart" element={ <Cart />}/>
               <Route exact path="/product/:id" element={ <Product />}/>
             </Routes>
-            </div>
+            </>
         );
     }
 }

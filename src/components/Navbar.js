@@ -5,7 +5,7 @@ const Navbar = () => {
   return(
 
     <>
-    <div className="header">
+    {/* <div className="header">
       <div className="row">
         <div className="col-2 pr-0 mr-0">
           <div className="navbar-menu">
@@ -23,7 +23,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
     </>
 
   );

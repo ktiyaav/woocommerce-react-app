@@ -1,0 +1,109 @@
+
+* {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    -ms-text-size-adjust: none;
+    outline: 0;
+}
+:root {
+    --sat: 0px;
+    --status-bar-height: 0px;
+    --sar: 0px;
+    --sab: 0px;
+    --sal: 0px;
+}
+html {
+    font-family: arial,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #282c3f;
+    letter-spacing: -.5px;
+    font-weight: 300;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #fff;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+* {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    -ms-text-size-adjust: none;
+    outline: 0;
+}
+input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+textarea {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background-color: field;
+    column-count: initial !important;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    padding: 2px;
+    line-height: 0px;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+    margin: 0px;
+}
+.mt-15{
+    padding: 0 15px 0 15px;
+    margin-top: 15px;
+}
+.bg-white{
+    background-color: #fff;
+}
+.no-padding{
+    margin:0px;
+    padding: 0px;
+}
+:not(input):not(textarea):not(button) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
