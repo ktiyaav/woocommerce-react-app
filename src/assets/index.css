@@ -77,6 +77,8 @@ a:visited {
 
 .slick-slide img {
     margin: auto;
+    width: 100px;
+    height: 100px;
 }
 
 .slick-list {

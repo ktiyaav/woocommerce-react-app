@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 import ProductLoader, {CategoryLoader} from './Loader';
 
 function ProductSlider(props) {
-  const [products, setProducts] = useState([]);
   const [loaded, setLoaded] = useState(false);
+  const [products, setProducts] = useState([]);
 
   useEffect(()=>{
     loadProducts();

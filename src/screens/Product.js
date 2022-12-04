@@ -5,19 +5,26 @@ import {useHistory, useParams} from 'react-router-dom';
 
 import {ArrowLeft} from 'react-feather';
 import {SingleProduct} from '../components/Loader';
+import { addCart, addtoCart } from "../redux/ActionCreators";
+import { connect } from "react-redux";
+const mapStateToProps = (state) => {
+  return{
+      cart: state.cart
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return{
+    addtoCart :(product) => {dispatch(addtoCart(product))}
+  }
+}
 
 function Product(props) {
-  const cart = props.cart;
-  const setCart = props.setCart;
-
   const [add, setAdd] = useState(false);
   const {id} = useParams();
   
   const [product, setProduct] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [src, setSrc] = useState(false);
-
-  const addtoCart = props.addtoCart;
 
   useEffect(()=>{
     loadProduct();
@@ -66,7 +73,7 @@ function Product(props) {
             </div>
             <div className="row bott-product-button">
             <div className="col-4 px-0">
-              <button onClick={()=> {addtoCart(product); setAdd(true);}} className="cart-button">Add to cart</button>
+              <button onClick={()=> {props.addtoCart(product); setAdd(true);}} className="cart-button">Add to cart</button>
             </div>
             <div className="col-8 px-0">
               <button className="buy-button">Buy Now</button>
@@ -80,4 +87,5 @@ function Product(props) {
   );
 }
 
-export default Product;
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);
