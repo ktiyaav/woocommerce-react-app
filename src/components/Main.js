@@ -8,6 +8,7 @@ import Cart from '../screens/Cart';
 import Shop from '../screens/Shop';
 import Account from '../screens/Account';
 import Product from '../screens/Product';
+import Login from '../screens/Login';
 import { addtoCart, addCart, createOrder } from '../redux/ActionCreators';
 // Creating a WithRouter with new functions as it is not supported in latest React Router Dom
 const withRouter = (Component) => {
@@ -45,6 +46,7 @@ class Main extends Component{
             <Bottom />
             <Routes location={this.props.location}>
               <Route exact path="/home" element={ <Home  /> } />
+              <Route exact path="/login" element={ <Login  /> } />
               <Route path="*" element={ <Home  /> } />
               <Route exact path="/search" element={ <Shop />}/>
               <Route exact path="/account" element={ <Account />}/>
