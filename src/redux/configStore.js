@@ -7,7 +7,6 @@ import { Login } from './User';
 import { Orders } from './Orders';
 
 export const configureStore = () => {
-    console.log(Login)
     const store = createStore(
         combineReducers({
             cart: Cart,

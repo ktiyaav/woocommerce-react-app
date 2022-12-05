@@ -482,6 +482,17 @@ button{
     font-weight: 800;
     text-transform: uppercase;
 }
+.proceed-checkout .cart-address{
+    background-color: #42b902;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    margin: auto;
+    float: none;
+    padding: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
 .proceed-checkout .icon{
     width: 50px;
     height: 100%;
@@ -491,6 +502,9 @@ button{
     display: flex;
     position: relative;
     padding: 15px;
+
+    overflow: hidden;
+    align-items: center;
 }
 .proceed-checkout .icon .svg{
     height: 20px;
@@ -563,6 +577,9 @@ button{
     font-size: 16px;
     color: #686b78;
     font-weight: 300;
+
+    overflow: hidden;
+    align-items: center;
 }
 .cart .order-query .note{
     font-size: 1rem;

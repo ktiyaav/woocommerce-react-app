@@ -5,7 +5,6 @@ export const Orders = (state = {
         errMess: null,
         orders: []
     }, action) => {
-    console.log(state.orders)
     switch(action.type) {
         case ActionTypes.ADD_ORDERS:
             return {...state, isLoading:false, errMess:null, orders: action.payload};

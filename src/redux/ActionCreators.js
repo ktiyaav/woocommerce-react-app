@@ -8,10 +8,8 @@ export const addtoCart = (product) => ({
 
 
 export const fetchUser = (user) => (dispatch) => {
-    console.log(user)
     API.get("customers?email="+user.email)
     .then((response) => {
-        console.log(response.data)
       if(response.data.length){
          dispatch(addUser(response.data))
       } else{ 
@@ -87,7 +85,6 @@ export const createOrder =(data) => (dispatch) => {
 export const fetchOrders = (user) => (dispatch) => {
     API.get("orders?customer="+user[0].id)
     .then((response) => {
-      console.log(response.data)
       dispatch(addOrders(response.data))
     })
     .catch((error) => {

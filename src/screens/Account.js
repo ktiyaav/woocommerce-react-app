@@ -26,7 +26,6 @@ render(){
     return <div>Loading ...</div>;
   }
   if(this.props.auth0.isAuthenticated){
-  console.log(this.props)
   if ( this.props.login.isLogged ) {
     return (
       <>

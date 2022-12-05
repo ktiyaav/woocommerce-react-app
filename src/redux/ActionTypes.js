@@ -4,6 +4,8 @@ export const CART_FAILED = 'CART_FAILED';
 export const CART_LOADING = 'CART_LOADING';
 
 export const ADD_ADDRESS = 'ADD_ADDRESS';
+export const ADDRESS_LOADING = 'ADDRESS_LOADING';
+export const ADDRESS_FAILED = 'ADDRESS_FAILED';
 
 export const ADD_ORDERS = 'ADD_ORDERS';
 export const ORDERS_LOADING = 'ORDERS_LOADING';
