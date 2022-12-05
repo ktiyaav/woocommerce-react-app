@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {ArrowLeft} from 'react-feather';
 import { connect } from 'react-redux';
-import { useLocation, useNavigate, useParams, Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { addtoCart, createOrder} from '../redux/ActionCreators';
 
-// Creating a WithRouter with new functions as it is not supported in latest React Router Dom
 const mapStateToProps = (state) => {
   return{
       cart: state.cart,
@@ -23,22 +22,22 @@ class Cart extends Component{
     if(this.props.cart.cart.length > 0){
     return(
       <>
-        <div className="cart-page">
+      <div className="cart-page">
         <Link  to={{ pathname: `/` }}>    
-        <div className="cart-header">
-          <div className="button cart-back-arrow">
-          <svg class="uHGrw" viewBox="0 0 32 32" height="18" width="18"><path d="M3.333 14.984l28.667-0v2.097l-0.16 0.006h-28.506l-0.16-0.16v-1.782l0.16-0.16zM1.114 14.986l10.079-10.079 0.121-0.108 1.465 1.467-0.101 0.127-10.079 10.079h-0.226l-1.26-1.26v-0.226zM12.679 25.676l0.108 0.117-1.468 1.484-0.126-0.115-10.079-10.079v-0.226l1.26-1.26h0.226l10.079 10.079zM3.268 12.87l0.272 0.116-0.022 6.125-0.272 0.114-3.245-3.18 0.111-0.112 3.157-3.062z"></path></svg>
-          </div>
-          <div className='cart-st0re-info'>
-          <div className="cart-store-info" role='presentation'>
-            <div className='store-name'>
-              <span>Cart</span>
+          <div className="cart-header">
+            <div className="button cart-back-arrow">
+            <svg class="uHGrw" viewBox="0 0 32 32" height="18" width="18"><path d="M3.333 14.984l28.667-0v2.097l-0.16 0.006h-28.506l-0.16-0.16v-1.782l0.16-0.16zM1.114 14.986l10.079-10.079 0.121-0.108 1.465 1.467-0.101 0.127-10.079 10.079h-0.226l-1.26-1.26v-0.226zM12.679 25.676l0.108 0.117-1.468 1.484-0.126-0.115-10.079-10.079v-0.226l1.26-1.26h0.226l10.079 10.079zM3.268 12.87l0.272 0.116-0.022 6.125-0.272 0.114-3.245-3.18 0.111-0.112 3.157-3.062z"></path></svg>
             </div>
-            <p className='cart-eta'>{this.props.cart.cart.length} Items | ETA:  NA MINS</p>
+            <div className='cart-st0re-info'>
+            <div className="cart-store-info" role='presentation'>
+              <div className='store-name'>
+                <span>Cart</span>
+              </div>
+              <p className='cart-eta'>{this.props.cart.cart.length} Items | ETA:  NA MINS</p>
+            </div>
+            </div>
+            <div className='button cart-home'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/> </svg></div>
           </div>
-          </div>
-          <div className='button cart-home'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/> </svg></div>
-        </div>
         </Link>
         <div className="mt-2 cart">
           <div className='savings'>
@@ -127,19 +126,19 @@ class Cart extends Component{
       return(
         <div>
           <div className="cart-page">
-          <div className="cart-header">
-            <div className="cart-back-arrow">
-              <ArrowLeft/>
+            <div className="cart-header">
+              <div className="cart-back-arrow">
+                <ArrowLeft/>
+              </div>
+              <div className="title">
+                Cart
+              </div>
             </div>
-            <div className="title">
-              Cart
+            <div className="container mt-2">
+              <div className="items-heading">No Items in Cart</div>
             </div>
           </div>
-          <div className="container mt-2">
-            <div className="items-heading">No Items in Cart</div>
         </div>
-        </div>
-      </div>
       )
     }
   }

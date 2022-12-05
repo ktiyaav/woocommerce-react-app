@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import { withAuth0 } from '@auth0/auth0-react';
 import { fetchOrders, fetchUser } from "../redux/ActionCreators";
 import { connect } from "react-redux";
-import { Link } from "react-feather";
-import { useNavigate } from "react-router-dom";
 
 const mapDispatchToProps = (dispatch) => {
   return{
@@ -35,7 +32,7 @@ render(){
       <>
       <div className="account-page">
         <div className="user row m-auto">
-          <div className="col-3 m-auto"><img className="avatar" src={this.props.login.user[0].avatar_url}></img></div>
+          <div className="col-3 m-auto"><img alt="user-avatar" className="avatar" src={this.props.login.user[0].avatar_url}></img></div>
           <div className="col-7 m-auto">
             <div className="row title m-auto">Hello {this.props.login.user[0].first_name}</div>
             <div className="row m-auto p">{this.props.login.user[0].email} | {this.props.login.user[0].billing.phone}</div>
@@ -55,7 +52,6 @@ render(){
           <div className='button cart-home'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/> </svg></div>
           </div>
         </div>
-
         <div className="row my-account no-padding">
           <div className="col-10">
             <div className="row title">
@@ -69,7 +65,6 @@ render(){
           <div className='button cart-home'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/> </svg></div>
           </div>
         </div>
-
         <div className="row my-account no-padding">
           <div className="col-10">
             <div className="row title">
@@ -96,8 +91,6 @@ render(){
           <div className='button cart-home'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/> </svg></div>
           </div>
         </div>
-
-
         <div className="row my-account no-padding" onClick={() => logout({ returnTo: window.location.origin })}>
           <div className="col-10">
             <div className="row title">
@@ -110,11 +103,11 @@ render(){
           <div className="col-2">
           <div className='button cart-home'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-reverse-fill" viewBox="0 0 16 16"> <path d="M0 3a2 2 0 0 1 2-2h7.08a2 2 0 0 1 1.519.698l4.843 5.651a1 1 0 0 1 0 1.302L10.6 14.3a2 2 0 0 1-1.52.7H2a2 2 0 0 1-2-2V3zm9.854 2.854a.5.5 0 0 0-.708-.708L7 7.293 4.854 5.146a.5.5 0 1 0-.708.708L6.293 8l-2.147 2.146a.5.5 0 0 0 .708.708L7 8.707l2.146 2.147a.5.5 0 0 0 .708-.708L7.707 8l2.147-2.146z"/> </svg></div>
           </div>
-          
         </div>
         <div className="row orders-title">
         Past Orders
         </div>
+        {/* ORDERS */}
         {this.props.fetchOrders(this.props.login.user)}
         {this.props.orders.orders.map((item,index) => (
           <div className="row my-orders no-padding">
@@ -139,14 +132,13 @@ render(){
             </div>
           </div>
         ))}
-
-      <div className="space-large"></div>
-      </div>
+        <div className="space-large"></div>
+        </div>
       </>    
     )
     } else {
       this.props.fetchUser(user)
-      return <>Please login</>
+      return <>Loading...</>
     }
   }
   this.props.auth0.loginWithRedirect();
