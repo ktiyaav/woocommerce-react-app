@@ -46,7 +46,9 @@ button{
     appearance: none;
 }
 /*--------- General Style ----------- */
-
+.below-header-bar{
+    margin-top:60px;
+}
 .circle {
     border-radius: 50%;
     height: 150px;
@@ -220,8 +222,11 @@ button{
     background: #161619;
     border-right: 1px solid #eee;
 }
-
-
+.cart-empty{
+    width: 100%;
+    margin: auto;
+    margin-top: 40%;
+}
 /*------Cart Page ---------*/
 
 .cart-page {

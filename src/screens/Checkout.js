@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
     }
 }
 class Checkout extends Component{
-    render(){
+    componentDidMount(){
         const { loginWithRedirect } = this.props.auth0;
         if(this.props.login.isLogged){
             this.props.createOrder(this.props.login.user[0],this.props.cart.cart)
@@ -27,6 +27,8 @@ class Checkout extends Component{
             console.log(this.props)
             loginWithRedirect()
         }
+    }
+    render(){
         return(
         <>
         <Link  to={{ pathname: `/` }}>    

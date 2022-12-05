@@ -3,39 +3,8 @@ import * as ActionTypes from './ActionTypes';
 export const Cart = (state = {
         isLoading: false,
         errMess: null,
-        cart: [
-            {
-                "id": 3162,
-                "name": "Crispy Chicken Burger",
-                "link": "https://jufy.shaktisaurav.com/product/crispy-chicken-burger/",
-                "regularPrice": 120,
-                "price": 80,
-                "storeName": "FoodieBaaz",
-                "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9.jpg",
-                "qty": 1
-            },
-            {
-                "id": 3160,
-                "name": "Black Forest Cake",
-                "link": "https://jufy.shaktisaurav.com/product/black-forest-cake/",
-                "regularPrice": 330,
-                "price": 300,
-                "storeName": "FoodieBaaz",
-                "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-8.jpg",
-                "qty": 1
-            },
-            {
-                "id": 3164,
-                "name": "Samosa (1pc)",
-                "link": "https://jufy.shaktisaurav.com/product/samosa-1pc/",
-                "regularPrice": 30,
-                "price": 25,
-                "storeName": "FoodieBaaz",
-                "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-10.jpg",
-                "qty": 1
-            }
-        ],
-        total : 405
+        cart: [],
+        total : 0
     }, action) => {
     switch(action.type) {
         case ActionTypes.ADD_TO_CART:

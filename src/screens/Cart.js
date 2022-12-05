@@ -145,19 +145,17 @@ class Cart extends Component{
               </div>
               <div className='row'>
                 <div className='col-10'>Delivery Fee</div>
-                <div className='col-2 my-auto mr-auto price'>₹ 40</div>
+                <div className='col-2 my-auto mr-auto price'>₹ 10</div>
               </div>
               <hr/>
               <div className='row'>
                 <div className='col-10'>To Pay</div>
-                <div className='col-2 my-auto mr-auto price'>₹ {this.props.cart.total + 40}</div>
+                <div className='col-2 my-auto mr-auto price'>₹ {this.props.cart.total + 10}</div>
               </div>
             </div>
           </div>
           <div className='mb-120'></div>
           { this.props.login.isLogged ? ProceedToCheckout() : ProceedToLogin() }
-          
-
         </div>
       </div>
       </>
@@ -175,8 +173,11 @@ class Cart extends Component{
                 Cart
               </div>
             </div>
-            <div className="container mt-2">
-              <div className="items-heading">No Items in Cart</div>
+            <div className="container bg-white mt-2 below-header-bar">
+              <img className='cart-empty' alt="empty cart" src={require('../assets/images/cart-empty.png')}/>
+            </div>
+            <div className='row bg-white text-center'>
+              <center>Your Cart is Empty, add some product to checkout!</center>
             </div>
           </div>
         </div>
