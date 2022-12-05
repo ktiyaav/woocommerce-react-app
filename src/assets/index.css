@@ -768,7 +768,9 @@ button{
     text-transform: uppercase;
     margin: 2px;
 }
-
+.desc.status{
+    text-transform: capitalize;
+}
 .my-orders .btn-ac{    
     text-decoration: none;
     cursor: pointer;
