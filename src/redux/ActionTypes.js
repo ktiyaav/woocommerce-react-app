@@ -4,4 +4,12 @@ export const CART_FAILED = 'CART_FAILED';
 export const CART_LOADING = 'CART_LOADING';
 
 export const ADD_ADDRESS = 'ADD_ADDRESS';
+
 export const ADD_ORDERS = 'ADD_ORDERS';
+export const ORDERS_LOADING = 'ORDERS_LOADING';
+export const ORDERS_FAILED = 'ORDERS_FAILED';
+
+export const LOGIN = 'LOGIN';
+export const ADD_USER = 'ADD_USER'
+export const USER_FAILED = 'USER_FAILED';
+export const USER_LOADING = 'USER_LOADING';

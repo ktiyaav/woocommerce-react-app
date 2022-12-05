@@ -1,19 +1,20 @@
 import * as ActionTypes from './ActionTypes';
 
-export const Orders = (state = {
+export const Login = (state = {
         isLoading: false,
+        isLogged: false,
         errMess: null,
-        orders: []
+        user: []
     }, action) => {
-    console.log(state.orders)
     switch(action.type) {
-        case ActionTypes.ADD_ORDERS:
-            return {...state, isLoading:false, errMess:null, orders: action.payload};
+        
+        case ActionTypes.ADD_USER:
+            return {...state, isLoading:false, isLogged: true, errMess:null, user: action.payload};
 
-        case ActionTypes.ORDERS_LOADING:
+        case ActionTypes.USER_LOADING:
             return {...state, isLoading:true, errMess:null};
         
-        case ActionTypes.ORDERS_FAILED:
+        case ActionTypes.USER_FAILED:
             return {...state, isLoading:false, errMess:action.payload};
             
         default:

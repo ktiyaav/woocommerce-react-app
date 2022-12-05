@@ -637,3 +637,155 @@ button{
         display: none;
     }
 }
+
+
+/* Account Page */
+
+.account-page{
+    height: 100%;
+    padding: 0px 16px;
+}
+.account-page .user{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 28px 0 28px;
+    color: #3d4152;
+    margin: 0 16px;
+    border-bottom: 2px solid #282c3f;
+}
+.account-page .title{    
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000;
+}
+.account-page .p{
+    color: #7e808c;
+    margin-top: 6px;
+    font-size: .73rem;
+    line-height: 1.3;
+}
+.account-page .avatar{
+    border-radius: 50px;
+    margin: auto;
+    max-width: 65px;
+    padding: 0px;
+}
+.my-account{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #ddd;
+}
+
+.my-account .title{
+    font-size: 1.07rem;
+    font-weight: 800;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.my-account .desc{
+
+    font-size: .86rem;
+    font-weight: 400;
+    margin-top: 4px;
+    color: #7e808c;
+}
+
+.orders-title{
+    margin-top: 28px!important;
+    background-color: rgb(172, 172, 172);
+    font-size: .86rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding: 0 15px;
+    display: flex;
+    height: 40px;
+    letter-spacing: .8px;
+    margin: auto;
+    align-items: center;
+
+}
+
+.my-orders{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #ddd;
+}
+.my-orders .title{
+    font-size: 1.07rem;
+    font-weight: 800;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-transform: none;
+}
+
+.my-orders .btn{    
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #fc8019;
+    background-color: #fff;
+    color: #fc8019;
+    line-height: 25px;
+    height: 40px;
+    font-weight: 600;
+    border-radius: 2px;
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    /* display: flex; */
+    /* align-items: center; */
+    text-transform: uppercase;
+    margin: 2px;
+}
+
+.my-orders .btn-ac{    
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #fc8019;
+    background-color:#fc8019;
+    color: #fff;
+    line-height: 35px;
+    height: 40px;
+    font-weight: 600;
+    border-radius: 2px;
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    /* display: flex; */
+    /* align-items: center; */
+    text-transform: uppercase;
+    margin: 2px;
+}
+

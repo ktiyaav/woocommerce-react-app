@@ -103,6 +103,12 @@ p {
     margin:0px;
     padding: 0px;
 }
+.space-medium{
+    margin: 10px;
+}
+.space-large{
+    margin: 50px;
+}
 :not(input):not(textarea):not(button) {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

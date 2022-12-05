@@ -7,7 +7,8 @@ import { addtoCart, createOrder} from '../redux/ActionCreators';
 // Creating a WithRouter with new functions as it is not supported in latest React Router Dom
 const mapStateToProps = (state) => {
   return{
-      cart: state.cart
+      cart: state.cart,
+      login: state.login
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -20,7 +21,6 @@ class Cart extends Component{
   render(props){
     console.log(this.props.createOrder);
     if(this.props.cart.cart.length > 0){
-      console.log(this.props.cart);
     return(
       <>
         <div className="cart-page">

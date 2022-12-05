@@ -37,7 +37,6 @@ export const Cart = (state = {
         ],
         total : 405
     }, action) => {
-        console.log(state.cart)
     switch(action.type) {
         case ActionTypes.ADD_TO_CART:
             const item = state.cart.find(

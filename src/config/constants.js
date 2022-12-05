@@ -2,9 +2,9 @@ import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
 const instance = new WooCommerceRestApi({
   url: "https://jufy.shaktisaurav.com/",
-  consumerKey: "ck_e2bd3129c7dc1e1f2d10f80ee55771943d217fdb",
-  consumerSecret: "cs_e0c7143ec22e9bb1c9bfaf1c3efa75ffcd0b17f2",
-  version: "wc/v3",
+  consumerKey: "ck_b997ecf7ecae05c0deffb00166fc19203a5b5622",
+  consumerSecret: "cs_92963b5e05702e5fad2688648c4b1d83e751cfbf",
+  version: "wc/v2",
   queryStringAuth: true
 });
 export default instance; 

@@ -9,7 +9,8 @@ import Shop from '../screens/Shop';
 import Account from '../screens/Account';
 import Product from '../screens/Product';
 import Login from '../screens/Login';
-import { addtoCart, addCart, createOrder } from '../redux/ActionCreators';
+import Profile from '../components/Authentication/Profile'
+import { addtoCart, addCart, createOrder, fetchUser } from '../redux/ActionCreators';
 // Creating a WithRouter with new functions as it is not supported in latest React Router Dom
 const withRouter = (Component) => {
     function ComponentWithRouterProp(props) {
@@ -29,7 +30,8 @@ const withRouter = (Component) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    addtoCart :(product) => {dispatch(addtoCart(product))}
+    addtoCart :(product) => {dispatch(addtoCart(product))},
+    fetchUser : (email) => {dispatch(fetchUser(email))}
   }
 }
 const mapStateToProps = (state) => {
@@ -49,9 +51,10 @@ class Main extends Component{
               <Route exact path="/login" element={ <Login  /> } />
               <Route path="*" element={ <Home  /> } />
               <Route exact path="/search" element={ <Shop />}/>
-              <Route exact path="/account" element={ <Account />}/>
+              <Route exact path="/account" element={ <Account fetchUser={fetchUser} />}/>
               <Route exact path="/cart" element={ <Cart />}/>
               <Route exact path="/product/:id" element={ <Product />}/>
+              <Route exact path="/logout" element={ <Profile />}/>
             </Routes>
             </>
         );
