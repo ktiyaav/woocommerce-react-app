@@ -11,22 +11,8 @@ import Product from '../screens/Product';
 import Login from '../screens/Login';
 import Profile from '../components/Authentication/Profile'
 import { addtoCart, addCart, createOrder, fetchUser } from '../redux/ActionCreators';
-// Creating a WithRouter with new functions as it is not supported in latest React Router Dom
-const withRouter = (Component) => {
-    function ComponentWithRouterProp(props) {
-      let location = useLocation();
-      let navigate = useNavigate();
-      let params = useParams();
-      return (
-        <Component
-          {...props}
-          router={{ location, navigate, params }}
-        />
-      );
-    }
-  
-    return ComponentWithRouterProp;
-}
+import OrderPlaced from '../screens/OrderPlaced';
+import Checkout from '../screens/Checkout';
 
 const mapDispatchToProps = (dispatch) => {
   return{
@@ -51,10 +37,11 @@ class Main extends Component{
               <Route exact path="/login" element={ <Login  /> } />
               <Route path="*" element={ <Home  /> } />
               <Route exact path="/search" element={ <Shop />}/>
-              <Route exact path="/account" element={ <Account fetchUser={fetchUser} />}/>
+              <Route exact path="/account" element={ <Account />}/>
               <Route exact path="/cart" element={ <Cart />}/>
               <Route exact path="/product/:id" element={ <Product />}/>
               <Route exact path="/logout" element={ <Profile />}/>
+              <Route exact path="/checkout" element={ <Checkout />}/>
             </Routes>
             </>
         );

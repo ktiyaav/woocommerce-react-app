@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {ArrowLeft} from 'react-feather';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { addtoCart, createOrder} from '../redux/ActionCreators';
 import { withAuth0 } from '@auth0/auth0-react';
-
+import Checkout from './Checkout';
+import {withRouter}from '../utils/withRouter';
 const mapStateToProps = (state) => {
   return{
       cart: state.cart,
@@ -13,17 +14,18 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return{
-    addtoCart :(product) => {dispatch(addtoCart(product))},
-    createOrder : (data) => dispatch(createOrder(data))
+    addtoCart :(product) => {dispatch(addtoCart(product))}
   }
 }
 
 class Cart extends Component{
-  render(props){
-    console.log(this.props.login);
-
+  RedirectTOCheckout(){
+    this.props.navigate('/checkout')
+  }
+  render(){
+    console.log(this.props)
     const { loginWithRedirect } = this.props.auth0;
-
+    
     const ProceedToAddAddress = () => (
       <div className='row proceed-checkout m-auto'>
         <div className='row address m-auto'>
@@ -44,11 +46,11 @@ class Cart extends Component{
           <div className='col-7 no-padding m-auto'>
             <div className='title'>Deliver to {this.props.login.user[0].shipping.address_1}</div><p>{this.props.login.user[0].shipping.address_2 }</p><p>{this.props.login.user[0].shipping.city}</p>
           </div>
-          <div className='col-2 no-padding address-change'>Add</div>
+          <div className='col-2 no-padding address-change'>CHANGE</div>
         </div>
         <div className='row no-padding second m-auto'>
           <div className='col-6 m-auto'><div className='total'>₹ {this.props.cart.total}</div><p>View Detailed Bill</p></div>
-          <div className='col-6 button cart-pay no-padding m-auto' onClick={() => this.props.createOrder(this.props.cart)}>Pay Now</div>
+          <div className='col-6 button cart-pay no-padding m-auto' onClick={() => this.RedirectTOCheckout() }>Pay Now</div>
         </div>
       </div>
     : ProceedToAddAddress()
@@ -65,7 +67,7 @@ class Cart extends Component{
         </div>
       </div>
     )
-    
+
     if(this.props.cart.cart.length > 0){
     return(
       <>
@@ -182,4 +184,4 @@ class Cart extends Component{
     }
   }
 }
-export default withAuth0(connect(mapStateToProps, mapDispatchToProps)(Cart));
+export default withRouter(withAuth0(connect(mapStateToProps, mapDispatchToProps)(Cart)));

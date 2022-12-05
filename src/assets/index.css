@@ -482,6 +482,9 @@ button{
     font-weight: 800;
     text-transform: uppercase;
 }
+.proceed-checkout a{
+    padding: 0px;
+}
 .proceed-checkout .cart-address{
     background-color: #42b902;
     color: #fff;
@@ -602,6 +605,17 @@ button{
     text-align: right;
     padding-right: 10px;
     vertical-align: middle;
+}
+.checkout{
+}
+.checkout.order-placed{
+    background-color: #fff;
+    transition: opacity .2s ease-out;
+    margin: 0 auto;
+    padding: 18px 18px 1px;
+    width: 100%;
+    margin-top:50px;
+    overflow-x: visible;
 }
 /*------- Bottom Navigation ----- */
 

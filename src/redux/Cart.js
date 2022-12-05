@@ -76,7 +76,8 @@ export const Cart = (state = {
         
         case ActionTypes.CART_FAILED:
             return {...state, isLoading:false, errMess:action.payload};
-            
+        case ActionTypes.CLEAR_CART:
+            return {...state, isLoading:false, cart:[], total: 0}
         default:
             return state;
     }

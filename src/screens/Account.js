@@ -17,7 +17,11 @@ const mapStateToProps = (state) => {
     }
 }
 class Account extends Component{
-  
+componentDidMount(){
+  setTimeout(() => {
+    if(this.props.login.isLogged){this.props.fetchOrders(this.props.login.user[0])}
+  }, 5000);
+}
 render(){
   const { user, isAuthenticated, isLoading, logout } = this.props.auth0;
   const { loginWithRedirect } = this.props.auth0;
@@ -106,8 +110,6 @@ render(){
         <div className="row orders-title">
         Past Orders
         </div>
-        {/* ORDERS */}
-        {this.props.fetchOrders(this.props.login.user)}
         {this.props.orders.orders.map((item,index) => (
           <div className="row my-orders no-padding">
             <div className="col-10">
