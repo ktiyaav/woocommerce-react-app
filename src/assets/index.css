@@ -99,6 +99,33 @@ button{
 
 .location {}
 
+.navbar {
+    padding-top: var(--sat);
+    height: calc(52px + var(--sat));
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #fff;
+    height: 52px;
+    width: 100%;
+    z-index: 6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-box-shadow: 0 2px 2px rgb(40 44 63 / 10%);
+    box-shadow: 0 2px 2px rgb(40 44 63 / 10%);
+    padding: 7px 15px 7px 15px;
+    
+}
+.navbar .logo{
+    max-width: 150px;
+    margin: auto;
+}
 
 /*----Slick ----- */
 
@@ -239,7 +266,6 @@ button{
 .cart-header {
     padding-top: var(--sat);
     height: calc(52px + var(--sat));
-
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -258,6 +284,7 @@ button{
     -webkit-box-shadow: 0 2px 2px rgb(40 44 63 / 10%);
     box-shadow: 0 2px 2px rgb(40 44 63 / 10%);
     
+    overflow: hidden;
 }
 
 .cart-back-arrow {
@@ -674,12 +701,14 @@ button{
     }
 }
 
-
 /* Account Page */
-
 .account-page{
     height: 100%;
     padding: 0px 16px;
+    z-index: 99999;
+    position: absolute;
+    background: #fff;
+    width: 100%;
 }
 .account-page .user{
     display: -webkit-box;

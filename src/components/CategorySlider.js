@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import API from '../config/constants';
 import {Link} from 'react-router-dom';
 
-import {CategoryLoader} from './Loader';
+import {CategoryLoader} from './ui/loaders/CategoryLoader';
 
 
 function CategorySlider(props) {

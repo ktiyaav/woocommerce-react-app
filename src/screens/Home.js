@@ -4,6 +4,9 @@ import ProductSlider from '../components/ProductSlider';
 import CategorySlider from '../components/CategorySlider';
 import API from '../config/constants';
 class Home extends Component{
+  componentDidMount(){
+    
+  }
   render(){
     return(
       <div>

@@ -1,6 +1,6 @@
 import React,{lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom';
-import ProductLoader from './components/Loader';
+import ProductLoader from './components/ui/loaders/ProductLoader';
 
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";

@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
-import { connect } from 'react-redux';
-import { Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import Home from '../screens/Home';
 import Navbar from './Navbar';
 import Bottom from './Bottom';
@@ -10,21 +9,8 @@ import Account from '../screens/Account';
 import Product from '../screens/Product';
 import Login from '../screens/Login';
 import Profile from '../components/Authentication/Profile'
-import { addtoCart, addCart, createOrder, fetchUser } from '../redux/ActionCreators';
-import OrderPlaced from '../screens/OrderPlaced';
 import Checkout from '../screens/Checkout';
 
-const mapDispatchToProps = (dispatch) => {
-  return{
-    addtoCart :(product) => {dispatch(addtoCart(product))},
-    fetchUser : (email) => {dispatch(fetchUser(email))}
-  }
-}
-const mapStateToProps = (state) => {
-    return{
-        cart: state.cart
-    }
-}
 
 class Main extends Component{
     render(){
@@ -32,10 +18,10 @@ class Main extends Component{
             <>
             <Navbar />
             <Bottom />
-            <Routes location={this.props.location}>
+            <Routes>
+              <Route path="*" element={ <Home  /> } />
               <Route exact path="/home" element={ <Home  /> } />
               <Route exact path="/login" element={ <Login  /> } />
-              <Route path="*" element={ <Home  /> } />
               <Route exact path="/search" element={ <Shop />}/>
               <Route exact path="/account" element={ <Account />}/>
               <Route exact path="/cart" element={ <Cart />}/>
@@ -47,4 +33,4 @@ class Main extends Component{
         );
     }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Main);
+export default Main;

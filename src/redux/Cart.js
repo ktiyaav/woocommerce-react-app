@@ -14,7 +14,7 @@ export const Cart = (state = {
             
             if (item) {
                 return {
-                  ...state,
+                  ...state, isLoading: false,
                   cart: state.cart.map(item => item.id === action.payload.id
                     ? {
                       ...item,
@@ -36,7 +36,7 @@ export const Cart = (state = {
                 qty: 1
             }
             return {
-                ...state,
+                ...state, isLoading: false,
                 cart: [...state.cart, product],
                 total: +state.total + +product.price,
             };
@@ -45,6 +45,7 @@ export const Cart = (state = {
         
         case ActionTypes.CART_FAILED:
             return {...state, isLoading:false, errMess:action.payload};
+            
         case ActionTypes.CLEAR_CART:
             return {...state, isLoading:false, cart:[], total: 0}
         default:

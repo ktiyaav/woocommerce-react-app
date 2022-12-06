@@ -131,6 +131,7 @@ export const createOrder =(user,items) => (dispatch) => {
     });
 }
 export const fetchOrders = (user) => (dispatch) => {
+    dispatch(ordersLoading())
     API.get("orders?customer="+user.id)
     .then((response) => {
       dispatch(addOrders(response.data))
@@ -142,6 +143,9 @@ export const fetchOrders = (user) => (dispatch) => {
 export const addOrders = (orders) => ({
     type : ActionTypes.ADD_ORDERS,
     payload : orders
+})
+export const ordersLoading = () => ({
+  type: ActionTypes.ORDERS_LOADING
 })
 
 // ADDRESS

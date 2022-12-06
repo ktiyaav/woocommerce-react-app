@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import Slider from "react-slick";
 import API from '../config/constants';
 import {Link} from 'react-router-dom';
-import ProductLoader, {CategoryLoader} from './Loader';
+import ProductLoader, {CategoryLoader} from './ui/loaders/ProductLoader';
 
 function ProductSlider(props) {
   const [loaded, setLoaded] = useState(false);

@@ -1,7 +1,7 @@
 import * as ActionTypes from './ActionTypes';
 
 export const Orders = (state = {
-        isLoading: false,
+        isLoading: true,
         errMess: null,
         orders: []
     }, action) => {

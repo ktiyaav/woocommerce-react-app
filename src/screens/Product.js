@@ -4,9 +4,11 @@ import API from '../config/constants';
 import {useHistory, useParams} from 'react-router-dom';
 
 import {ArrowLeft} from 'react-feather';
-import {SingleProduct} from '../components/Loader';
-import { addCart, addtoCart } from "../redux/ActionCreators";
+import {SingleProduct} from '../components/ui/loaders/SingleProductLoader';
+import { addtoCart } from "../redux/ActionCreators";
 import { connect } from "react-redux";
+import ProductLoader from "../components/ui/loaders/ProductLoader";
+
 const mapStateToProps = (state) => {
   return{
       cart: state.cart

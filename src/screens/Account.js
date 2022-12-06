@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { withAuth0 } from '@auth0/auth0-react';
 import { fetchOrders, fetchUser } from "../redux/ActionCreators";
 import { connect } from "react-redux";
+import AccountLoader from "../components/ui/loaders/AccountLoader";
+import OrdersLoader from '../components/ui/loaders/OrdersLoader';
 
 const mapDispatchToProps = (dispatch) => {
   return{
@@ -27,7 +29,7 @@ render(){
   const { loginWithRedirect } = this.props.auth0;
   
   if (this.props.auth0.isLoading) {
-    return <div>Loading ...</div>;
+    return <AccountLoader></AccountLoader>;
   }
   if(this.props.auth0.isAuthenticated){
   if ( this.props.login.isLogged ) {
@@ -110,7 +112,8 @@ render(){
         <div className="row orders-title">
         Past Orders
         </div>
-        {this.props.orders.orders.map((item,index) => (
+        {this.props.orders.isLoading ? <OrdersLoader/> : 
+        this.props.orders.orders.map((item,index) => (
           <div className="row my-orders no-padding">
             <div className="col-10">
               <div className="row title">
@@ -139,7 +142,7 @@ render(){
     )
     } else {
       this.props.fetchUser(user)
-      return <>Loading...</>
+      return <AccountLoader></AccountLoader>;
     }
   }
   this.props.auth0.loginWithRedirect();
