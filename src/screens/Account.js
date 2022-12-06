@@ -19,10 +19,9 @@ const mapStateToProps = (state) => {
     }
 }
 class Account extends Component{
-componentDidMount(){
-  setTimeout(() => {
-    if(this.props.login.isLogged){this.props.fetchOrders(this.props.login.user[0])}
-  }, 5000);
+componentDidUpdate(){
+  if(this.props.login.isLogged){
+    if(this.props.orders.isLoading)this.props.fetchOrders(this.props.login.user[0])}
 }
 render(){
   const { user, isAuthenticated, isLoading, logout } = this.props.auth0;

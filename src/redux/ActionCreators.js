@@ -131,7 +131,6 @@ export const createOrder =(user,items) => (dispatch) => {
     });
 }
 export const fetchOrders = (user) => (dispatch) => {
-    dispatch(ordersLoading())
     API.get("orders?customer="+user.id)
     .then((response) => {
       dispatch(addOrders(response.data))
