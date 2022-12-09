@@ -1,7 +1,6 @@
 import API from '../config/constants';
 import * as ActionTypes from './ActionTypes';
-import { Navigate } from 'react-router-dom';
-import React from 'react';
+
 // CART
 export const addtoCart = (product) => ({
     type: ActionTypes.ADD_TO_CART,
@@ -115,12 +114,12 @@ export const createOrder =(user,items) => (dispatch) => {
           }
         ]
     };
-    items.map((item,index) => {
+    items.map((item,index) => (
         orderData.line_items.push({
             product_id: item.id, 
             quantity: item.qty
         })
-    })
+    ))
     API.post("orders", orderData)
     .then((response) => {
         console.log(response.data);
@@ -150,7 +149,44 @@ export const ordersLoading = () => ({
 // ADDRESS
 export const fetchAddress = () => (dispatch) => {
 }
-export const addAddress = (shipping,billing) => (dispatch) => {
+export const postAddress = (id, telnum, address1, address2, city, state, country, zip) => (dispatch) => {
+  console.log(id)
+  const data = {
+    billing: {
+      address_1: address1,
+      address_2: address2,
+      city: city,
+      state: state,
+      country: country,
+      postcode: zip,
+      phone: telnum
+    },
+    shipping: {
+      address_1: address1,
+      address_2: address2,
+      city: city,
+      state: state,
+      country: country,
+      postcode: zip, 
+      phone: telnum
+    }
+  }
+  API.put("customers/"+ id ,data)
+  .then((response) => {
+    console.log(response.data);
+    dispatch(addAddress(data))
+  })
+  .catch((error) => {
+    dispatch(addressFailed(error.response.data.message))
+    console.log(error.response.data);
+  });
 }
+export const addressFailed = (error) => ({ 
+  type: ActionTypes.ADDRESS_FAILED,
+  payload: error
+})
 
-
+export const addAddress = (data) => ({
+  type : ActionTypes.ADD_ADDRESS,
+  payload : data
+});

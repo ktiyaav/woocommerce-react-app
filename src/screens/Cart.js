@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {ArrowLeft} from 'react-feather';
 import { connect } from 'react-redux';
-import { Link, Navigate } from 'react-router-dom';
-import { addtoCart, createOrder} from '../redux/ActionCreators';
+import { Link } from 'react-router-dom';
+import { addtoCart } from '../redux/ActionCreators';
 import { withAuth0 } from '@auth0/auth0-react';
-import Checkout from './Checkout';
 import {withRouter}from '../utils/withRouter';
 const mapStateToProps = (state) => {
   return{
@@ -22,6 +21,9 @@ class Cart extends Component{
   RedirectTOCheckout(){
     this.props.navigate('/checkout')
   }
+  RedirectToAddAddress(){
+    this.props.navigate('/add-address')
+  }
   render(){
     console.log(this.props)
     const { loginWithRedirect } = this.props.auth0;
@@ -34,7 +36,7 @@ class Cart extends Component{
           <div className='col-2'></div>
         </div>
         <div className='row no-padding m-auto'>
-          <div className='col-12 button cart-address no-padding m-auto'>Add Address</div>
+          <div className='col-12 button cart-address no-padding m-auto' onClick={() => this.RedirectToAddAddress()}>Add Address</div>
         </div>
       </div>
     )
