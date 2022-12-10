@@ -1,4 +1,4 @@
-import API from '../config/constants';
+import API from '../utils/api';
 import * as ActionTypes from './ActionTypes';
 
 // CART

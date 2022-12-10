@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Slider from "react-slick";
-import API from '../config/constants';
+import API from '../utils/api';
 import {useHistory, useParams} from 'react-router-dom';
 
 import {ArrowLeft} from 'react-feather';
