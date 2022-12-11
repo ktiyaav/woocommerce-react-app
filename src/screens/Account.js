@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth0 } from '@auth0/auth0-react';
-import { fetchOrders, fetchUser } from "../redux/ActionCreators";
+import { fetchOrders, fetchUser } from "../utils/api";
 import { connect } from "react-redux";
 import AccountLoader from "../components/ui/loaders/AccountLoader";
 import OrdersLoader from '../components/ui/loaders/OrdersLoader';

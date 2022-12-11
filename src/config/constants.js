@@ -30,3 +30,6 @@ export const CONSUMER_SECRET = 'cs_92963b5e05702e5fad2688648c4b1d83e751cfbf';
 export const ONE_SIGNAL_APP_ID = '';
 export const PLUGIN = '';
 
+export const WCVERSION = "wc/v2";
+export const WCFM = "wcfmmp/v1";
+export const WCANALYTICS = "wc-analytics";

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { createOrder } from "../redux/ActionCreators";
+import { createOrder } from "../utils/api";
 import { withRouter } from '../utils/withRouter';
 import { withAuth0 } from "@auth0/auth0-react";
 

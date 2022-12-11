@@ -856,3 +856,13 @@ button{
     margin: 2px;
 }
 
+
+/* Home */
+.restaurants-nearby{
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #f5f6f7;
+    background: #f5f6f7;
+    border-radius: 7px;
+    box-shadow: 6px -6px 20px rgb(0 0 0 / 8%);
+}

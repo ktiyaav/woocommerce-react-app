@@ -5,7 +5,7 @@ import { Control, Errors, Form, LocalForm } from 'react-redux-form';
 import { actions } from 'react-redux-form';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Button, Col, Label, Row } from 'reactstrap';
-import { postAddress } from '../redux/ActionCreators';
+import { postAddress } from '../utils/api';
 import { connect } from 'react-redux';
 
 const required = (val) => val && val.length;
