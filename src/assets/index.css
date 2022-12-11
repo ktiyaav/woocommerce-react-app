@@ -69,6 +69,9 @@ button{
 .bg-white {
     background: #fff!important;
 }
+.bg-grey{
+    background: #f8f9fa!important;
+}
 
 .br {
     border-right: 1px solid #eee;

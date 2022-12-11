@@ -51,9 +51,6 @@ class Home extends Component{
       <Banner />
       <CategorySlider title="" fetch="categories" />
       <StoresList stores={this.props.stores}></StoresList>
-      <ProductSlider icon="fa fa-cutlery" title="Food" fetch="products?category=85" />
-      <ProductSlider icon="fa fa-bolt" title="Fashion" fetch="products?category=173" />
-      <ProductSlider icon="fa fa-thumbs-o-up" title="Grocery" fetch="products?category=174" />
       <div className='space-large'></div>
       </div>
     )
