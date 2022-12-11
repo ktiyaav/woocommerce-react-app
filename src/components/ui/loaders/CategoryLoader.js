@@ -1,23 +1,34 @@
 import React from 'react'
 import ContentLoader from 'react-content-loader'
-import { ArrowDownCircle } from 'react-feather'
+import useWindowDimensions from '../../../utils/windowSize'
 
 export const CategoryLoader = props => {
-    return (
-      <ContentLoader
-        height={120}
-        width={960}
-        speed={1}
-        column={5}
-        {...props}
-      >
-        <circle cx="80" cy="60" r="50" />
-      </ContentLoader>
-    )
+
+  const { height, width } = useWindowDimensions();
+  let i = 60
+  let list = []
+  while (i<width) {
+    list.push(<circle cx={i} cy="60" r="50" />)
+    i += 120
+  }
+  return (
+    <ContentLoader
+      height={120}
+      width={960}
+      speed={1}
+      column={5}
+      {...props}
+    >
+      {list}
+    </ContentLoader>
+  )
 }
 CategoryLoader.metadata = {
-  name: 'PhátMai', // My name
-  github: 'lPaths', // Github username
-  description: 'CategoryLoader', // Little tagline
-  filename: 'CategoryLoader', // filename of your loader
+  name: 'Shakti Saurav', 
+  github: '7IG3R', 
+  description: 'CategoryLoader', 
+  filename: 'CategoryLoader', 
 }
+
+
+

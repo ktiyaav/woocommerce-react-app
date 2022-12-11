@@ -46,7 +46,10 @@ function ProductSlider(props) {
 
   return (
     <>
-      <div className="section-title">{props.title}</div>
+      <div className='row restaurants-nearby'>
+            <div className="col-6 d-flex align-items-center pl-4"><i className={props.icon} aria-hidden="true"></i>&nbsp;{props.title}</div>
+            <div className="col-6"></div>
+          </div>
       {(loaded == false)
       ? <ProductLoader/>
       :(

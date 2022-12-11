@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { addtoCart } from '../redux/ActionCreators';
 import { withAuth0 } from '@auth0/auth0-react';
 import {withRouter}from '../utils/withRouter';
+import { fetchUser } from '../utils/api';
 const mapStateToProps = (state) => {
   return{
       cart: state.cart,
@@ -13,11 +14,19 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return{
-    addtoCart :(product) => {dispatch(addtoCart(product))}
+    addtoCart :(product) => {dispatch(addtoCart(product))},
+    fetchUser: (user) => (dispatch(fetchUser(user)))
   }
 }
 
 class Cart extends Component{
+  componentDidUpdate(){
+    const { user, isAuthenticated, isLoading, logout } = this.props.auth0;
+    if(isAuthenticated && !this.props.login.isLogged){
+      this.props.fetchUser(user)
+    }
+  }
+
   RedirectTOCheckout(){
     this.props.navigate('/checkout')
   }
@@ -25,7 +34,6 @@ class Cart extends Component{
     this.props.navigate('/add-address')
   }
   render(){
-    console.log(this.props)
     const { loginWithRedirect } = this.props.auth0;
     
     const ProceedToAddAddress = () => (
@@ -60,7 +68,7 @@ class Cart extends Component{
     const ProceedToLogin = () => (
       <div className='row proceed-checkout m-auto'>
         <div className='row address m-auto'>
-          <div className='col-2 no-padding m-auto'><div className='button icon'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-x"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line></svg></div></div>
+          <div className='col-2 no-padding m-auto'><div className='button icon'><i className="fa fa-user-plus" aria-hidden="true"></i></div></div>
           <div className='col-7 no-padding m-auto'><div className='title'>Almost there!</div><p>Login or signup to place an order</p></div>
           <div className='col-2'></div>
         </div>
@@ -77,7 +85,7 @@ class Cart extends Component{
         <Link  to={{ pathname: `/` }}>    
           <div className="cart-header">
             <div className="button cart-back-arrow">
-            <svg class="uHGrw" viewBox="0 0 32 32" height="18" width="18"><path d="M3.333 14.984l28.667-0v2.097l-0.16 0.006h-28.506l-0.16-0.16v-1.782l0.16-0.16zM1.114 14.986l10.079-10.079 0.121-0.108 1.465 1.467-0.101 0.127-10.079 10.079h-0.226l-1.26-1.26v-0.226zM12.679 25.676l0.108 0.117-1.468 1.484-0.126-0.115-10.079-10.079v-0.226l1.26-1.26h0.226l10.079 10.079zM3.268 12.87l0.272 0.116-0.022 6.125-0.272 0.114-3.245-3.18 0.111-0.112 3.157-3.062z"></path></svg>
+            <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
             </div>
             <div className='cart-st0re-info'>
             <div className="cart-store-info" role='presentation'>
@@ -87,7 +95,7 @@ class Cart extends Component{
               <p className='cart-eta'>{this.props.cart.cart.length} Items | ETA:  NA MINS</p>
             </div>
             </div>
-            <div className='button cart-home'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/> </svg></div>
+            <div className='button cart-home'><i className="fa fa-home" aria-hidden="true"></i></div>
           </div>
         </Link>
         <div className="mt-2 cart">
@@ -133,7 +141,7 @@ class Cart extends Component{
           <div className='row bg-white'>
             <div className='order-query'>
               <span className='icon'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> </svg>
+              <i className="fa fa-commenting" aria-hidden="true"></i>
               </span>
               <textarea className='note' placeholder="Write your suggestions!"></textarea>
             </div>

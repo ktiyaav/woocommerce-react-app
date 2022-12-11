@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Banner from '../components/Banner';
+import { withAuth0 } from '@auth0/auth0-react';
 import ProductSlider from '../components/ProductSlider';
 import CategorySlider from '../components/CategorySlider';
 import { fetchVendors, fetchUser } from '../utils/api';
 import { connect } from 'react-redux';
 import StoresList from '../components/store/StoreList';
+import { withRouter } from '../utils/withRouter';
+
 const mapDispatchToProps = (dispatch) => {
   return{
     fetchVendors :() => {dispatch(fetchVendors())},
@@ -20,23 +23,41 @@ const mapStateToProps = (state) => {
     }
 }
 class Home extends Component{
+  
   componentDidMount(){
+    const { user, isAuthenticated } = this.props.auth0;
+    if(this.isAuthenticated && this.isLoading){
+      this.props.fetchUser(this.user.email)
+    }
     this.props.fetchVendors();
+    // setTimeout(()=>{
+    //   this.setState({
+    //     ...this.props.store, 
+    //     isLoading : false
+    // })
+    // },2000)
   }
+
+  componentDidUpdate(){
+    const { user, isAuthenticated } = this.props.auth0;
+    if(isAuthenticated && !this.props.login.isLogged){
+      this.props.fetchUser(user)
+    }
+  }
+  
   render(){
     return(
-      <div className='home-page'>
+      <div className='home-page below-header-bar'>
       <Banner />
       <CategorySlider title="" fetch="categories" />
-      <div className='restaurants-nearby'>20 Stores nearby <span>Delivery</span></div>
       <StoresList stores={this.props.stores}></StoresList>
-      <ProductSlider title="New Arrivals" fetch="products" />
-      <ProductSlider title="Category" fetch="products?category=112" />
-      <ProductSlider title="Tag" fetch="products?tags=34" />
-      <ProductSlider title="Category" fetch="products?category=113" />
+      <ProductSlider icon="fa fa-cutlery" title="Food" fetch="products?category=85" />
+      <ProductSlider icon="fa fa-bolt" title="Fashion" fetch="products?category=173" />
+      <ProductSlider icon="fa fa-thumbs-o-up" title="Grocery" fetch="products?category=174" />
+      <div className='space-large'></div>
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+export default withRouter(withAuth0(connect(mapStateToProps,mapDispatchToProps)(Home)));

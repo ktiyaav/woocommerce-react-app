@@ -123,7 +123,7 @@ button{
     
 }
 .navbar .logo{
-    max-width: 150px;
+    max-width: 120px;
     margin: auto;
 }
 
@@ -136,8 +136,9 @@ button{
 }
 
 .slick-list {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     padding-top: 2px;
+    background-color: #f8f9fa;
 }
 
 
@@ -145,12 +146,12 @@ button{
 
 .product-image {
     width: 125px!important;
-    height: 160px;
+    height: 155px!important;
     margin-right: 5px!important;
 }
 
 .product-slider {
-    border-right: 10px solid #fff;
+    /* border-right: 10px solid #fff; */
 }
 
 .product-description {
@@ -860,11 +861,10 @@ button{
 /* Home */
 .restaurants-nearby{
     padding: 5px;
-    text-align: center;
-    border: 1px solid #f5f6f7;
-    background: #f5f6f7;
+    border: 1px solid #f8f9fa;
+    background: #f8f9fa;
     border-radius: 7px;
-    box-shadow: 6px -6px 20px rgb(0 0 0 / 8%);
+    /* box-shadow: 6px -6px 20px rgb(0 0 0 / 8%); */
     margin-bottom: 10px;
 }
 .home-page{
@@ -874,8 +874,10 @@ button{
 
 
 /* STORE */
-.store-row{
-    height: 90px;
+.store{
+    height: 100px;
+    display: flex;
+    align-items: center;
 }
 .store-img-col{
     padding-left: 4px;
@@ -911,4 +913,55 @@ button{
 }
 .fa-star{
     color: rgb(252 174 25)
+}
+
+
+
+
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

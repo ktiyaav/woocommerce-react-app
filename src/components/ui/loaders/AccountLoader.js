@@ -3,14 +3,14 @@ import ContentLoader from 'react-content-loader'
 import useWindowDimensions from '../../../utils/windowSize'
 const AccountLoader = props => {
   const { height, width } = useWindowDimensions();
-  console.log(width,height)
+  const viewBox = '0 0 '+width+' 130';
   return (
     <>
     <ContentLoader
       speed={2}
       width={width - 10}
       height={height}
-      viewBox='0 0 ${width} ${height}'
+      viewBox= {viewBox}
       backgroundColor="rgb(238 235 235)"
       foregroundColor="#ededed"
       {...props}

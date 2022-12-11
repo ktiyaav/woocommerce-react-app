@@ -3,16 +3,14 @@ import ContentLoader from 'react-content-loader'
 import useWindowDimensions from '../../../utils/windowSize'
 const OrdersLoader = props => {
   const { height, width } = useWindowDimensions();
-  console.log(width,height)
+  const viewBox = '0 0 '+width+' 130';
   return (
     <>
     <ContentLoader
       speed={2}
       width={width - 20}
       height={130}
-      viewBox='0 0 ${width} 130'
-      backgroundColor="#d9d9d9"
-      foregroundColor="#ededed"
+      viewBox={viewBox}
       {...props}
     >
     <rect x={width - 65} y="20" rx="0" ry="0" width="20" height="20" />
@@ -26,9 +24,7 @@ const OrdersLoader = props => {
       speed={2}
       width={width - 20}
       height={130}
-      viewBox='0 0 ${width} 130'
-      backgroundColor="#d9d9d9"
-      foregroundColor="#ededed"
+      viewBox={viewBox}
       {...props}
     >
     <rect x={width - 65} y="20" rx="0" ry="0" width="20" height="20" />

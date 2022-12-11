@@ -38,7 +38,7 @@ const ProductLoader = ({
 
       list.push(
         <>
-          <rect
+          <rect key={i + '1'}
             x={x}
             y={0}
             rx={borderRadius}
@@ -46,8 +46,8 @@ const ProductLoader = ({
             width={itemWidth}
             height={height1}
           />
-          <rect x={x} y={y2} rx={0} ry={0} width={itemWidth} height={height2} />
-          <rect
+          <rect key={i + '2'} x={x} y={y2} rx={0} ry={0} width={itemWidth} height={height2} />
+          <rect key={i + '3'}
             x={x}
             y={y3}
             rx={0}

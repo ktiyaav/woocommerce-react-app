@@ -62,7 +62,7 @@ function CategorySlider(props) {
                 pathname: `/category/${category.id}`
               }}>
               <img alt={category.id} src={category.image.src} className="category-image circle" />
-              {/* <div className="title">{category.name}</div> */}
+              <div className="title">{category.name}</div>
               </Link>
               </div>
             ))

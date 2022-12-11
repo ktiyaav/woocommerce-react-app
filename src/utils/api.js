@@ -17,6 +17,11 @@ const API = WOOAPI(WCVERSION)
 const STOREAPI = WOOAPI(WCFM)
 export default API; 
   
+axios.interceptors.request.use(function (config) {
+  const { headers = {} } = config || {}
+  if (headers['User-Agent']) delete config.headers['User-Agent']
+  return config
+})
 // export const API = axios.create({
 //   baseURL:  BASEURL,
 //   version: WCVERSION
@@ -195,10 +200,7 @@ export const fetchVendors = (user) => (dispatch) => {
   STOREAPI.get("store-vendors")
   .then((response) => {
     if(response.data.length){
-      console.log(response)
-       dispatch(addStores(response.data))
-    } else{ 
-      dispatch(createUser(user))
+      dispatch(addStores(response.data))
     }
   })
   .catch((error) => {
