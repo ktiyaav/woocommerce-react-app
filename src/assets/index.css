@@ -865,4 +865,50 @@ button{
     background: #f5f6f7;
     border-radius: 7px;
     box-shadow: 6px -6px 20px rgb(0 0 0 / 8%);
+    margin-bottom: 10px;
+}
+.home-page{
+    background-color: #f8f9fa;
+    /* background-color: #000; */
+}
+
+
+/* STORE */
+.store-row{
+    height: 90px;
+}
+.store-img-col{
+    padding-left: 4px;
+}
+.store-image{
+    width: 100px;
+    height: 80px;
+    border-radius: 7px;
+}
+.store-list .store{
+    background: #fff;
+    margin: 0 5px 10px 5px;
+    padding: 5px;
+    border-radius: 7px;
+}
+.store-list .title{
+    font-weight: 800;
+    padding-top: 5px;
+    font-size: 1.1em;
+}
+.store-list .store-description{
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+.store-list .store-info{
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    font-size: 0.8em;
+    padding-top: 5px;
+}
+.fa-star{
+    color: rgb(252 174 25)
 }

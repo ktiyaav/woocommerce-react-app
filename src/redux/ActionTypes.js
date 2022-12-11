@@ -16,3 +16,7 @@ export const LOGIN = 'LOGIN';
 export const ADD_USER = 'ADD_USER'
 export const USER_FAILED = 'USER_FAILED';
 export const USER_LOADING = 'USER_LOADING';
+
+export const ADD_STORES = 'ADD_STORES';
+export const STORES_LOADING = 'STORES_LOADING';
+export const STORES_FAILED = 'STORES_FAILED';

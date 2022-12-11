@@ -1,7 +1,7 @@
 import axios from 'axios';
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 import { BASEURL, CONSUMER_KEY, CONSUMER_SECRET, WCVERSION, WCFM } from "../config/constants";
-import { addUser } from "../redux/ActionCreators";
+import { addStores, addUser } from "../redux/ActionCreators";
 import { clearCart, addOrders, addAddress, addressFailed } from "../redux/ActionCreators";
 
 
@@ -191,13 +191,17 @@ export const postAddress = (id, telnum, address1, address2, city, state, country
 }
 
 // Vendors
-export const fetchVendors = () => {
-    STOREAPI.get("store-vendors")
-    .then((response) => {
-      //dispatch(addOrders(response.data))
+export const fetchVendors = (user) => (dispatch) => {
+  STOREAPI.get("store-vendors")
+  .then((response) => {
+    if(response.data.length){
       console.log(response)
-    })
-    .catch((error) => {
-      console.log(error.response);
-    });
+       dispatch(addStores(response.data))
+    } else{ 
+      dispatch(createUser(user))
+    }
+  })
+  .catch((error) => {
+    console.log(error.response);
+  });
 }

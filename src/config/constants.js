@@ -24,6 +24,19 @@ export const API_ENDPOINTS = {
   ORDER: "/order",
 };
 
+export const VENDOR ={
+  ID: 'vendor_id',
+  NAME: 'vendor_shop_name',
+  DESCRIPTION: 'vendor_description',
+  LOGO: 'vendor_shop_logo',
+  MOBILE_BANNER: 'mobile_banner',
+  LIST_BANNER: 'vendor_list_banner',
+  RATING: 'store_rating',
+  ISOFFLINE: 'is_store_offline',
+
+
+}
+
 export const BASEURL = 'https://jufy.shaktisaurav.com/';
 export const CONSUMER_KEY = 'ck_b997ecf7ecae05c0deffb00166fc19203a5b5622';
 export const CONSUMER_SECRET = 'cs_92963b5e05702e5fad2688648c4b1d83e751cfbf';

@@ -30,3 +30,12 @@ export const addAddress = (data) => ({
   type : ActionTypes.ADD_ADDRESS,
   payload : data
 });
+
+export const addStores = (stores) => ({
+  type : ActionTypes.ADD_STORES,
+  payload : stores
+})
+export const storesFailed = (errMess) => ({
+  type : ActionTypes.STORES_FAILED,
+  payload : errMess
+})

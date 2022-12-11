@@ -6,6 +6,7 @@ import { Cart } from './Cart';
 import { Login } from './User';
 import { Orders } from './Orders';
 import { Address } from './Address';
+import { Stores } from "./Stores";
 
 export const configureStore = () => {
     const store = createStore(
@@ -14,6 +15,7 @@ export const configureStore = () => {
             login: Login,
             orders: Orders,
             address: Address,
+            stores: Stores,
             ...createForms({
                 
             })

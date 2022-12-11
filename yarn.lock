@@ -1322,6 +1322,32 @@
   "resolved" "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.5.tgz"
   "version" "0.7.5"
 
+"@fortawesome/fontawesome-common-types@6.2.1":
+  "integrity" "sha512-Sz07mnQrTekFWLz5BMjOzHl/+NooTdW8F8kDQxjWwbpOJcnoSg4vUDng8d/WR1wOxM0O+CY9Zw0nR054riNYtQ=="
+  "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.2.1.tgz"
+  "version" "6.2.1"
+
+"@fortawesome/fontawesome-svg-core@^6.2.1":
+  "integrity" "sha512-HELwwbCz6C1XEcjzyT1Jugmz2NNklMrSPjZOWMlc+ZsHIVk+XOvOXLGGQtFBwSyqfJDNgRq4xBCwWOaZ/d9DEA=="
+  "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.2.1.tgz"
+  "version" "6.2.1"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
+"@fortawesome/free-regular-svg-icons@^6.2.1":
+  "integrity" "sha512-wiqcNDNom75x+pe88FclpKz7aOSqS2lOivZeicMV5KRwOAeypxEYWAK/0v+7r+LrEY30+qzh8r2XDaEHvoLsMA=="
+  "resolved" "https://registry.npmjs.org/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-6.2.1.tgz"
+  "version" "6.2.1"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
+"@fortawesome/free-solid-svg-icons@^6.2.1":
+  "integrity" "sha512-oKuqrP5jbfEPJWTij4sM+/RvgX+RMFwx3QZCZcK9PrBDgxC35zuc7AOFsyMjMd/PIFPeB2JxyqDr5zs/DZFPPw=="
+  "resolved" "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.2.1.tgz"
+  "version" "6.2.1"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
 "@hapi/address@2.x.x":
   "integrity" "sha512-QD1PhQk+s31P1ixsX0H0Suoupp3VMXzIVMSwobR3F3MSUO2YCV0B7xqLcUw/Bh8yuvd3LhpyqLQWTNcRmp6IdQ=="
   "resolved" "https://registry.npmjs.org/@hapi/address/-/address-2.1.4.tgz"
@@ -1589,7 +1615,7 @@
   "resolved" "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz"
   "version" "1.1.3"
 
-"@popperjs/core@^2.0.0", "@popperjs/core@^2.6.0":
+"@popperjs/core@^2.0.0", "@popperjs/core@^2.11.6", "@popperjs/core@^2.6.0":
   "integrity" "sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw=="
   "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.6.tgz"
   "version" "2.11.6"
@@ -2953,10 +2979,10 @@
   "resolved" "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
 
-"bootstrap@^5.0.0-alpha1":
-  "integrity" "sha512-iwKneP2pLXl8lN0YpnOuOARiNPTzmh/4cw+Un86u4OqrMLuQpyMC7nO07hvivvcg0B/ektJPjuPnS1s+YmRK9A=="
-  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.0.0-alpha1.tgz"
-  "version" "5.0.0-alpha1"
+"bootstrap@^5.2.3":
+  "integrity" "sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.2.3.tgz"
+  "version" "5.2.3"
 
 "boxen@^5.0.0":
   "integrity" "sha512-9gYgQKXx+1nP8mP7CzFyaUARhg7D3n1dF/FnErWmu9l6JvGpNUN278h0aSb+QjoiKSWG+iZ3uHrcqk0qrY9RQQ=="
