@@ -1,6 +1,6 @@
 import React,{lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom';
-import ProductLoader from './components/ui/loaders/ProductLoader';
+import SiteLoader from './components/ui/loaders/SiteLoader';
 
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
@@ -20,12 +20,7 @@ ReactDOM.render(
   <>
   <BrowserRouter>
     <Suspense fallback={
-      <>
-      <ProductLoader/>
-      <ProductLoader/>
-      <ProductLoader/>
-      <ProductLoader/>
-      </>
+      <SiteLoader></SiteLoader>
     }>
       <MyApp/>
     </Suspense>
