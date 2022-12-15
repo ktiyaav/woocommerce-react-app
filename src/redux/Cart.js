@@ -12,17 +12,18 @@ export const Cart = (state = {
                 "price": 80,
                 "storeName": "FoodieBaaz",
                 "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9.jpg",
-                "qty": 1
+                "qty": 1,
             }
         ],
-        total : 80
+        total : 80,
+        currency: '₹'
     }, action) => {
     switch(action.type) {
+        
         case ActionTypes.ADD_TO_CART:
             const item = state.cart.find(
                 product => product.id === action.payload.id,
             );
-            
             if (item) {
                 return {
                   ...state, isLoading: false,
@@ -33,7 +34,7 @@ export const Cart = (state = {
                     }
                     : item
                   ),
-                  total: +state.total + +action.payload.price,
+                  total: +state.total + +action.payload.price
                 };
             }
             var product = {
@@ -44,12 +45,12 @@ export const Cart = (state = {
                 price: +action.payload.price,
                 storeName: action.payload.store.store_name,
                 image: action.payload.images[0].src,
-                qty: 1
+                qty: 1,
             }
             return {
                 ...state, isLoading: false,
                 cart: [...state.cart, product],
-                total: +state.total + +product.price,
+                total: +state.total + +product.price
             };
         case ActionTypes.CART_LOADING:
             return {...state, isLoading:true, errMess:null};

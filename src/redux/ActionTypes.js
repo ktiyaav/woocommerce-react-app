@@ -10,6 +10,7 @@ export const ADDRESS_FAILED = 'ADDRESS_FAILED';
 
 export const ADD_ORDERS = 'ADD_ORDERS';
 export const ORDERS_LOADING = 'ORDERS_LOADING';
+export const ORDERS_LOADED = 'ORDERS_LOADED';
 export const ORDERS_FAILED = 'ORDERS_FAILED';
 
 export const LOGIN = 'LOGIN';

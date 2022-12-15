@@ -1,0 +1,211 @@
+{
+    "id": 7813,
+    "parent_id": 0,
+    "status": "processing",
+    "currency": "INR",
+    "version": "7.1.1",
+    "prices_include_tax": true,
+    "date_created": "2022-12-15T00:57:14",
+    "date_modified": "2022-12-15T00:57:14",
+    "discount_total": "0.00",
+    "discount_tax": "0.00",
+    "shipping_total": "10.00",
+    "shipping_tax": "0.00",
+    "cart_tax": "0.00",
+    "total": "90.00",
+    "total_tax": "0.00",
+    "customer_id": 40,
+    "order_key": "wc_order_UfnBjdpiyveDx",
+    "billing": {
+        "first_name": "Shriya",
+        "last_name": "Singh",
+        "company": "",
+        "address_1": "Bariyatu",
+        "address_2": "Ranchi",
+        "city": "Ranchi",
+        "state": "Jharkhand",
+        "postcode": "834009",
+        "country": "India",
+        "email": "shriya70501@gmail.com",
+        "phone": "8409258741"
+    },
+    "shipping": {
+        "first_name": "Shriya",
+        "last_name": "Singh",
+        "company": "",
+        "address_1": "Bariyatu",
+        "address_2": "Ranchi",
+        "city": "Ranchi",
+        "state": "Jharkhand",
+        "postcode": "834009",
+        "country": "India",
+        "phone": ""
+    },
+    "payment_method": "bacs",
+    "payment_method_title": "Direct Bank Transfer",
+    "transaction_id": "",
+    "customer_ip_address": "",
+    "customer_user_agent": "",
+    "created_via": "rest-api",
+    "customer_note": "",
+    "date_completed": null,
+    "date_paid": "2022-12-15T00:57:14",
+    "cart_hash": "",
+    "number": "7813",
+    "meta_data": [
+        {
+            "id": 220932,
+            "key": "_wcfmmp_order_processed",
+            "value": "yes"
+        },
+        {
+            "id": 220935,
+            "key": "_wcfm_new_order_notified",
+            "value": "yes"
+        },
+        {
+            "id": 220936,
+            "key": "_wcfm_membership_order_processed",
+            "value": "yes"
+        },
+        {
+            "id": 220937,
+            "key": "_wcpdf_invoice_settings",
+            "value": {
+                "display_shipping_address": "always",
+                "display_email": "1",
+                "display_phone": "1",
+                "display_customer_notes": "1",
+                "display_date": "invoice_date",
+                "header_logo": "1536",
+                "header_logo_height": "1cm",
+                "shop_name": {
+                    "default": "Jufy"
+                },
+                "shop_address": {
+                    "default": "A-72 First Floor, Pocket 40/203, Kalkaji, Delhi 110019"
+                },
+                "footer": {
+                    "default": ""
+                },
+                "extra_1": {
+                    "default": ""
+                },
+                "extra_2": {
+                    "default": ""
+                },
+                "extra_3": {
+                    "default": ""
+                }
+            }
+        },
+        {
+            "id": 220938,
+            "key": "_wcpdf_invoice_date",
+            "value": "1671046036"
+        },
+        {
+            "id": 220939,
+            "key": "_wcpdf_invoice_date_formatted",
+            "value": "2022-12-15 00:57:16"
+        },
+        {
+            "id": 220940,
+            "key": "_wcpdf_invoice_number",
+            "value": "249"
+        },
+        {
+            "id": 220941,
+            "key": "_wcpdf_invoice_number_data",
+            "value": {
+                "number": 249,
+                "formatted_number": "249",
+                "prefix": "",
+                "suffix": "",
+                "document_type": "invoice",
+                "order_id": 7813,
+                "padding": ""
+            }
+        }
+    ],
+    "line_items": [
+        {
+            "id": 514,
+            "name": "Crispy Chicken Burger",
+            "product_id": 3162,
+            "variation_id": 0,
+            "quantity": 1,
+            "tax_class": "",
+            "subtotal": "80.00",
+            "subtotal_tax": "0.00",
+            "total": "80.00",
+            "total_tax": "0.00",
+            "taxes": [],
+            "meta_data": [
+                {
+                    "id": 3757,
+                    "key": "_vendor_id",
+                    "value": "36",
+                    "display_key": "Store",
+                    "display_value": "FoodieBaaz"
+                },
+                {
+                    "id": 3758,
+                    "key": "_wcfmmp_order_item_processed",
+                    "value": "92",
+                    "display_key": "Store Order ID",
+                    "display_value": "92"
+                }
+            ],
+            "sku": "",
+            "price": 80,
+            "image": {
+                "id": "3163",
+                "src": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9.jpg"
+            },
+            "parent_name": null
+        }
+    ],
+    "tax_lines": [],
+    "shipping_lines": [
+        {
+            "id": 515,
+            "method_title": "Flat Rate",
+            "method_id": "flat_rate",
+            "instance_id": "",
+            "total": "10.00",
+            "total_tax": "0.00",
+            "taxes": [],
+            "meta_data": []
+        }
+    ],
+    "fee_lines": [],
+    "coupon_lines": [],
+    "refunds": [],
+    "payment_url": "https://jufy.shaktisaurav.com/checkout/order-pay/7813/?pay_for_order=true&key=wc_order_UfnBjdpiyveDx",
+    "is_editable": false,
+    "needs_payment": false,
+    "needs_processing": true,
+    "date_created_gmt": "2022-12-14T19:27:14",
+    "date_modified_gmt": "2022-12-14T19:27:14",
+    "date_completed_gmt": null,
+    "date_paid_gmt": "2022-12-14T19:27:14",
+    "currency_symbol": "₹",
+    "_links": {
+        "self": [
+            {
+                "href": "https://jufy.shaktisaurav.com/wp-json/wc/v2/orders/7813"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://jufy.shaktisaurav.com/wp-json/wc/v2/orders"
+            }
+        ],
+        "customer": [
+            {
+                "href": "https://jufy.shaktisaurav.com/wp-json/wc/v2/customers/40"
+            }
+        ]
+    }
+}

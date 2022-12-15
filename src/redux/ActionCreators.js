@@ -22,6 +22,9 @@ export const addOrders = (orders) => ({
 export const ordersLoading = () => ({
   type: ActionTypes.ORDERS_LOADING
 })
+export const ordersLoaded = () => ({
+  type: ActionTypes.ORDERS_LOADED
+})
 export const addressFailed = (error) => ({ 
   type: ActionTypes.ADDRESS_FAILED,
   payload: error

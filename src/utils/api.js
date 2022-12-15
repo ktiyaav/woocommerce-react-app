@@ -1,9 +1,9 @@
 import axios from 'axios';
 import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 import { BASEURL, CONSUMER_KEY, CONSUMER_SECRET, WCVERSION, WCFM } from "../config/constants";
-import { addStores, addUser } from "../redux/ActionCreators";
+import { addStores, addUser, ordersLoading } from "../redux/ActionCreators";
 import { clearCart, addOrders, addAddress, addressFailed } from "../redux/ActionCreators";
-
+import { push } from 'react-router-redux';
 
 const WOOAPI = (NAMESPACE) => new WooCommerceRestApi({
     url: BASEURL,
@@ -42,7 +42,6 @@ export const fetchUser = (user) => (dispatch) => {
     API.get("customers?email="+user.email)
     .then((response) => {
       if(response.data.length){
-        console.log(response)
          dispatch(addUser(response.data))
       } else{ 
         dispatch(createUser(user))
@@ -95,9 +94,8 @@ export const createUser = (user) => (dispatch) => {
 }
 
 // ORDER
-export const createOrder =(user,items) => (dispatch) => {
-    console.log(user);
-    console.log(items);
+export const createOrder =(payby, user,items) => (dispatch) => {
+    dispatch(ordersLoading());
     const orderData = {
         payment_method: "bacs",
         payment_method_title: "Direct Bank Transfer",
@@ -142,13 +140,22 @@ export const createOrder =(user,items) => (dispatch) => {
     ))
     API.post("orders", orderData)
     .then((response) => {
-        console.log(response.data);
         dispatch(clearCart())
+        const options = { 
+          amount: parseInt(response.data.total) * 100,
+          currency: response.data.currency,
+          reciept: response.data.id
+        }
+        console.log(response.data)
+        dispatch(push('/home'));
+        // if(payby === 'RAZORPAY') return createRazorPayOrder(options);
     })
     .catch((error) => {
         console.log(error);
     });
 }
+
+
 export const fetchOrders = (user) => (dispatch) => {
     API.get("orders?customer="+user.id)
     .then((response) => {

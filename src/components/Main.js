@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Route, Routes} from 'react-router-dom';
+import { Route, Routes, browserHistory} from 'react-router-dom';
 import Home from '../screens/Home';
 import Navbar from './Navbar';
 import Bottom from './Bottom';
@@ -13,6 +13,7 @@ import Checkout from '../screens/Checkout';
 import Address from '../screens/Address';
 
 class Main extends Component{
+    
     render(){
         return(
             <>

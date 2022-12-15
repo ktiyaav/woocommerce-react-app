@@ -35,6 +35,7 @@ function Product(props) {
   const loadProduct = async () => {
       const products = await API.get('products/'+id);
       setProduct(products.data);
+      console.log(products.data)
       setSrc(products.data.images[0].src);
       setLoaded(true);
   }

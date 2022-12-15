@@ -1,12 +1,5 @@
-import React, { Component } from 'react';
-import Banner from '../components/Banner';
-import { withAuth0 } from '@auth0/auth0-react';
+import React from 'react';
 import ProductSlider from '../components/ProductSlider';
-import CategorySlider from '../components/CategorySlider';
-import { fetchVendors, fetchUser } from '../utils/api';
-import { connect } from 'react-redux';
-import StoresList from '../components/store/StoreList';
-import { withRouter } from '../utils/withRouter';
 
 function Shop() {
   return (
