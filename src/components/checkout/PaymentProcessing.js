@@ -1,11 +1,10 @@
 import React from "react";
 
-import { RevolvingDot,Audio } from  'react-loader-spinner'
+import { RevolvingDot } from  'react-loader-spinner'
 import 'react-loader-spinner';
 
 
 export const PaymentProcessing = () => {
-    console.log('Done')
     return(
         <>
         <div className="payment-processing h-100 d-flex justify-content-center align-items-center">
@@ -22,10 +21,6 @@ export const PaymentProcessing = () => {
         />
         <div className="title">Please Wait, your payment is in progress, don't close this or go back!</div>
         </div>
-        
-
-</>
-    
+        </>
     )
-    
 }
