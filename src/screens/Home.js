@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Banner from '../components/Banner';
 import { withAuth0 } from '@auth0/auth0-react';
-import ProductSlider from '../components/ProductSlider';
 import CategorySlider from '../components/CategorySlider';
 import { fetchVendors, fetchUser } from '../utils/api';
 import { connect } from 'react-redux';

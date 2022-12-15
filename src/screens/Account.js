@@ -32,8 +32,10 @@ render(){
   }
   if(this.props.auth0.isAuthenticated){
   if ( this.props.login.isLogged ) {
+    
     return (
       <>
+      <AccountLoader></AccountLoader>
       <div className="account-page">
         <div className="user row m-auto">
           <div className="col-3 m-auto"><img alt="user-avatar" className="avatar" src={this.props.login.user[0].avatar_url}></img></div>

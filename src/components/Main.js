@@ -11,7 +11,7 @@ import Login from '../screens/Login';
 import Profile from '../components/Authentication/Profile'
 import Checkout from '../screens/Checkout';
 import Address from '../screens/Address';
-
+import TrackOrder from '../screens/TrackOrder';
 class Main extends Component{
     
     render(){
@@ -30,6 +30,7 @@ class Main extends Component{
               <Route exact path="/logout" element={ <Profile />}/>
               <Route exact path="/checkout" element={ <Checkout />}/>
               <Route exact path="/add-address" element={ <Address />}/>
+              <Route exact path="/track-order" element={ <TrackOrder />}/>
             </Routes>
             </>
         );

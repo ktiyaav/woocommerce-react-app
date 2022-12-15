@@ -744,6 +744,14 @@ button{
     background: #fff;
     width: 100%;
 }
+.account-page-loader{
+    height: 100%;
+    padding: 0px;
+    z-index: 99999;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+}
 .account-page .user{
     display: -webkit-box;
     display: -webkit-flex;
@@ -959,7 +967,6 @@ body {
 }
 
 body {
-  background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
