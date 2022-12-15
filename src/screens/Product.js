@@ -4,10 +4,10 @@ import API from '../utils/api';
 import {useHistory, useParams} from 'react-router-dom';
 
 import {ArrowLeft} from 'react-feather';
-import {SingleProduct} from '../components/ui/loaders/SingleProductLoader';
 import { addtoCart } from "../redux/ActionCreators";
 import { connect } from "react-redux";
 import ProductLoader from "../components/ui/loaders/ProductLoader";
+import Navbar from "../components/ui/Navbar";
 
 const mapStateToProps = (state) => {
   return{
@@ -28,6 +28,7 @@ function Product(props) {
   const [loaded, setLoaded] = useState(false);
   const [src, setSrc] = useState(false);
 
+  console.log(props)
   useEffect(()=>{
     loadProduct();
   },[]);
@@ -44,18 +45,12 @@ function Product(props) {
       <div className="product-page">
         {
           (loaded == false)
-          ? <SingleProduct/>
+          ? <ProductLoader/>
           : (<>
           {
             (add == false)
             ? (
-                <div className="product-back">
-                <div className="cart-back-arrow">
-                  <ArrowLeft/>
-                </div>
-                <div className="product-title">
-                {product.name}
-                </div></div>
+              <Navbar title={product.name} description={'Store: ' + product.store.store_name} path={'/search'}/>
               )
             :(
               <div className="product-added">

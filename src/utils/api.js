@@ -4,6 +4,7 @@ import { BASEURL, CONSUMER_KEY, CONSUMER_SECRET, WCVERSION, WCFM } from "../conf
 import { addStores, addUser, ordersLoading } from "../redux/ActionCreators";
 import { clearCart, addOrders, addAddress, addressFailed } from "../redux/ActionCreators";
 import { push } from 'react-router-redux';
+import { Navigate } from 'react-router-dom';
 
 const WOOAPI = (NAMESPACE) => new WooCommerceRestApi({
     url: BASEURL,
@@ -36,7 +37,9 @@ axios.interceptors.request.use(function (config) {
 // });
 
 
-
+const TrackOrder = () => {
+  Navigate('/track-order')
+}
 // USER
 export const fetchUser = (user) => (dispatch) => {
     API.get("customers?email="+user.email)
@@ -94,7 +97,7 @@ export const createUser = (user) => (dispatch) => {
 }
 
 // ORDER
-export const createOrder =(payby, user,items) => (dispatch) => {
+export const createOrder =(payby, user,items, navigate) => (dispatch) => {
     dispatch(ordersLoading());
     const orderData = {
         payment_method: "bacs",
@@ -147,7 +150,7 @@ export const createOrder =(payby, user,items) => (dispatch) => {
           reciept: response.data.id
         }
         console.log(response.data)
-        dispatch(push('/home'));
+        navigate('/track-order')
         // if(payby === 'RAZORPAY') return createRazorPayOrder(options);
     })
     .catch((error) => {

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { createOrder } from "../utils/api";
 import { withRouter } from '../utils/withRouter';
 import { withAuth0 } from "@auth0/auth0-react";
-import displayRazorpay from "../utils/razorpay";
 import { PaymentButton } from "../components/checkout/PaymentButoon";
 import { PaymentProcessing } from "../components/checkout/PaymentProcessing";
 import { ordersLoaded } from "../redux/ActionCreators";
+import Navbar from "../components/ui/Navbar";
 
 const mapDispatchToProps = (dispatch) => {
     return{
-    createOrder : (payby, user, items) => dispatch(createOrder(payby, user, items)),
+    createOrder : (payby, user, items, navigate) => dispatch(createOrder(payby, user, items, navigate)),
     ordersLoaded : () => dispatch(ordersLoaded())
     }
 }
@@ -24,53 +24,39 @@ const mapStateToProps = (state) => {
 }
 
 class Checkout extends Component{
+    
     componentDidMount(){
-        this.props.ordersLoaded();
         const { loginWithRedirect } = this.props.auth0;
-        console.log(this.props)
         if(this.props.login.isLogged){
-            // this.props.createOrder(this.props.login.user[0],this.props.cart.cart)
-            // displayRazorpay(this.props.login.user[0],this.props.cart.cart, this.props.createOrder)
+            if(this.props.cart.cart.length == 0) this.props.navigate('/cart')
         }
         else{
-            // console.log(this.props)
-            // loginWithRedirect()
+            loginWithRedirect()
         }
+        this.props.ordersLoaded();
     }
+
     handleChange(payby){
             console.log(payby)
-            this.props.createOrder(payby,this.props.login.user[0],this.props.cart.cart)
+            this.props.createOrder(payby,this.props.login.user[0], this.props.cart.cart, this.props.navigate)
     }
+    
     generatePriceTag(){
         return {__html: this.props.cart.currency};
     }
+
     render(){
         return(
         <>
         {this.props.orders.isLoading ? <PaymentProcessing></PaymentProcessing> : null }
-        <Link  to={{ pathname: `/` }}>    
-        <div className="cart-header">
-            <div className="button cart-back-arrow">
-                <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
-            </div>
-            <div className='cart-st0re-info'>
-                <div className="cart-store-info" role='presentation'>
-                    <div className='store-name'>
-                    <span>Checkout</span>
-                    </div>
-                    <p className='cart-eta'>{this.props.cart.cart.length} Items | Total : {this.props.cart.currency + ' ' + this.props.cart.total}</p>
-                </div>
-            </div>
-            <div className='button cart-home'><i className="fa fa-home" aria-hidden="true"></i></div>
-        </div>
-        </Link>
+        <Navbar path={'/cart'} title={'Checkout'} description={this.props.cart.cart.length + ' ITEMS | TOTAL : ' + this.props.cart.currency + ' ' + this.props.cart.total} />
         <div className="row checkout order-placed">
-        <div className="row d-flex justify-content-center">
-            <h5 className="title d-flex justify-content-center">Choose prefered Payment Method</h5>
-        </div>
-        <PaymentButton handleChange = {() => this.handleChange('PAYTM')} title='UPI' description='Pay Using Paytm UPI'/>
-        <PaymentButton handleChange = {() => this.handleChange('RAZORPAY')} title='UPI' description='Pay Using RAZORPAY UPI'/>
-        <PaymentButton handleChange = {() => this.handleChange('COD')} title='Cash on Delivery' description='Pay for your order at your doorstep.'/>
+            <div className="row d-flex justify-content-center">
+                <h5 className="title d-flex justify-content-center">Choose prefered Payment Method</h5>
+            </div>
+            <PaymentButton handleChange = {() => this.handleChange('PAYTM')} title='UPI' description='Pay Using Paytm UPI'/>
+            <PaymentButton handleChange = {() => this.handleChange('RAZORPAY')} title='UPI' description='Pay Using RAZORPAY UPI'/>
+            <PaymentButton handleChange = {() => this.handleChange('COD')} title='Cash on Delivery' description='Pay for your order at your doorstep.'/>
         </div>
         </>
         )
