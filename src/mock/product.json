@@ -1,0 +1,217 @@
+{
+    "id": 3162,
+    "name": "Crispy Chicken Burger",
+    "slug": "crispy-chicken-burger",
+    "permalink": "https://jufy.shaktisaurav.com/product/crispy-chicken-burger/",
+    "date_created": "2022-03-06T01:43:32",
+    "date_created_gmt": "2022-03-05T20:13:32",
+    "date_modified": "2022-12-12T01:10:12",
+    "date_modified_gmt": "2022-12-11T19:40:12",
+    "type": "simple",
+    "status": "publish",
+    "featured": false,
+    "catalog_visibility": "visible",
+    "description": "",
+    "short_description": "",
+    "sku": "",
+    "price": "80",
+    "regular_price": "120",
+    "sale_price": "80",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": true,
+    "purchasable": true,
+    "total_sales": 82,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "external_url": "",
+    "button_text": "",
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": false,
+    "stock_quantity": null,
+    "in_stock": true,
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "sold_individually": false,
+    "weight": "",
+    "dimensions": {
+        "length": "",
+        "width": "",
+        "height": ""
+    },
+    "shipping_required": true,
+    "shipping_taxable": true,
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "reviews_allowed": true,
+    "average_rating": "5.00",
+    "rating_count": 1,
+    "upsell_ids": [],
+    "cross_sell_ids": [],
+    "parent_id": 0,
+    "purchase_note": "",
+    "categories": [
+        {
+            "id": 201,
+            "name": "Snacks",
+            "slug": "snacks"
+        }
+    ],
+    "tags": [],
+    "images": [
+        {
+            "id": 3163,
+            "date_created": "2022-03-06T07:12:22",
+            "date_created_gmt": "2022-03-05T20:12:22",
+            "date_modified": "2022-03-06T07:12:22",
+            "date_modified_gmt": "2022-03-05T20:12:22",
+            "src": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9.jpg",
+            "name": "Product (9)",
+            "alt": "",
+            "position": 0,
+            "1536x1536": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-1344x1536.jpg",
+            "2048x2048": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9.jpg",
+            "post-thumbnail": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-360x210.jpg",
+            "konte-post-thumbnail-medium": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-580x400.jpg",
+            "konte-post-thumbnail-large": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-750x420.jpg",
+            "konte-post-thumbnail-navigation": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-100x68.jpg",
+            "konte-post-thumbnail-shortcode": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-450x300.jpg",
+            "woocommerce_thumbnail": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-300x300.jpg",
+            "woocommerce_single": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-600x686.jpg",
+            "woocommerce_gallery_thumbnail": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-120x140.jpg",
+            "thumbnail": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-150x150.jpg",
+            "medium": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-263x300.jpg",
+            "medium_large": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-768x878.jpg",
+            "large": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9-896x1024.jpg"
+        }
+    ],
+    "attributes": [],
+    "default_attributes": [],
+    "variations": [],
+    "grouped_products": [],
+    "menu_order": 0,
+    "price_html": "<ins><span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#8377;</span>80.00</bdi></span></ins> <del><span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#8377;</span>120.00</bdi></span></del>",
+    "related_ids": [
+        3164
+    ],
+    "meta_data": [
+        {
+            "id": 37366,
+            "key": "konte_size_guide",
+            "value": {
+                "guide": "",
+                "display": "",
+                "button_position": ""
+            }
+        },
+        {
+            "id": 37385,
+            "key": "_wcfmmp_commission",
+            "value": {
+                "commission_mode": "global",
+                "commission_percent": "90",
+                "commission_fixed": "",
+                "tax_name": "",
+                "tax_percent": ""
+            }
+        },
+        {
+            "id": 37386,
+            "key": "mfr",
+            "value": ""
+        },
+        {
+            "id": 37387,
+            "key": "_mfr",
+            "value": "field_61a90d96e2cfc"
+        },
+        {
+            "id": 45781,
+            "key": "_wcfm_product_views",
+            "value": "18"
+        }
+    ],
+    "product_units": {
+        "weight_unit": "kg",
+        "dimension_unit": "cm"
+    },
+    "wcfm_product_policy_data": {
+        "visible": true,
+        "shipping_policy": "<p><br></p>",
+        "shipping_policy_heading": "Shipping Policy",
+        "refund_policy": "<p><br></p>",
+        "refund_policy_heading": "Refund Policy",
+        "cancellation_policy": "<p><br></p>",
+        "cancellation_policy_heading": "Cancellation / Return / Exchange Policy",
+        "tab_title": "Store Policies"
+    },
+    "showAdditionalInfoTab": false,
+    "store": {
+        "id": 36,
+        "store_name": "FoodieBaaz",
+        "first_name": "Food",
+        "last_name": "Store",
+        "phone": "",
+        "show_email": true,
+        "email": "kragsolcom@gmail.com",
+        "vendor_address": "",
+        "banner": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/foodiebaaz.gif",
+        "mobile_banner": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/foodiebaaz.gif",
+        "list_banner": false,
+        "gravatar": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/category-food-1.png",
+        "shop_description": "<p>Delivering your favourite food within 20mins</p>",
+        "social": {
+            "twitter": "",
+            "fb": "",
+            "instagram": "",
+            "youtube": "",
+            "linkedin": "",
+            "gplus": "",
+            "snapchat": "",
+            "pinterest": ""
+        },
+        "address": {
+            "street_1": "",
+            "street_2": "",
+            "city": "",
+            "zip": "",
+            "country": "",
+            "state": ""
+        },
+        "customer_support": {
+            "phone": "",
+            "email": "",
+            "address1": "",
+            "address2": "",
+            "country": "",
+            "city": "",
+            "state": "",
+            "zip": ""
+        },
+        "featured": false,
+        "rating": {
+            "rating": 0,
+            "count": 0,
+            "avg": 0
+        }
+    },
+    "_links": {
+        "self": [
+            {
+                "href": "https://jufy.shaktisaurav.com/wp-json/wc/v2/products/3162"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://jufy.shaktisaurav.com/wp-json/wc/v2/products"
+            }
+        ]
+    }
+}

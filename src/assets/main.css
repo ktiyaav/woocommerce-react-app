@@ -120,3 +120,12 @@ p {
     -ms-user-select: none;
     user-select: none;
 }
+
+.delivery-check input{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #eee;
+    margin: 10px 0px 10px 0px;
+    font-weight: 200;
+    padding: 10px;
+}
