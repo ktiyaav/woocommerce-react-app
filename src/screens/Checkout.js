@@ -26,9 +26,10 @@ const mapStateToProps = (state) => {
 class Checkout extends Component{
     
     componentDidMount(){
+        console.log(this.props)
         const { loginWithRedirect } = this.props.auth0;
         if(this.props.login.isLogged){
-            if(this.props.cart.cart.length == 0) this.props.navigate('/cart')
+            if(this.props.cart.cart.length === 0) this.props.navigate('/cart')
         }
         else{
             loginWithRedirect()

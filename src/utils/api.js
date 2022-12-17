@@ -37,9 +37,6 @@ axios.interceptors.request.use(function (config) {
 // });
 
 
-const TrackOrder = () => {
-  Navigate('/track-order')
-}
 // USER
 export const fetchUser = (user) => (dispatch) => {
     API.get("customers?email="+user.email)
@@ -150,7 +147,7 @@ export const createOrder =(payby, user,items, navigate) => (dispatch) => {
           reciept: response.data.id
         }
         console.log(response.data)
-        navigate('/track-order')
+        navigate('/track-order/'+ response.data.id)
         // if(payby === 'RAZORPAY') return createRazorPayOrder(options);
     })
     .catch((error) => {
@@ -158,7 +155,12 @@ export const createOrder =(payby, user,items, navigate) => (dispatch) => {
     });
 }
 
-
+export const fetchOrder = async (orderID) => {
+  console.log('hii')
+  await API.get("orders/" + orderID)
+  .then(response => { return response.data })
+  .catch(error => console.log(error))
+}
 export const fetchOrders = (user) => (dispatch) => {
     API.get("orders?customer="+user.id)
     .then((response) => {

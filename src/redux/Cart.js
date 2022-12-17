@@ -3,18 +3,7 @@ import * as ActionTypes from './ActionTypes';
 export const Cart = (state = {
         isLoading: false,
         errMess: null,
-        cart: [
-            {
-                "id": 3162,
-                "name": "Crispy Chicken Burger",
-                "link": "https://jufy.shaktisaurav.com/product/crispy-chicken-burger/",
-                "regularPrice": 120,
-                "price": 80,
-                "storeName": "FoodieBaaz",
-                "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2022/03/Product-9.jpg",
-                "qty": 1,
-            }
-        ],
+        cart: [],
         total : 80,
         currency: '₹'
     }, action) => {

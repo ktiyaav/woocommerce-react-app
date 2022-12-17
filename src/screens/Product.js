@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from "react";
 import Slider from "react-slick";
 import API from '../utils/api';
-import {useHistory, useParams} from 'react-router-dom';
+import {useHistory, useNavigate, useParams} from 'react-router-dom';
 
 import {ArrowLeft} from 'react-feather';
 import { addtoCart } from "../redux/ActionCreators";
 import { connect } from "react-redux";
-import ProductLoader from "../components/ui/loaders/ProductLoader";
+import SingleProductLoader from "../components/ui/loaders/SingleProductLoader";
 import Navbar from "../components/ui/Navbar";
 
 const mapStateToProps = (state) => {
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 function Product(props) {
-
+  let navigate = useNavigate();
   const [add, setAdd] = useState(false);
   const {id} = useParams();
   const [product, setProduct] = useState([]);
@@ -35,10 +35,9 @@ function Product(props) {
   const loadProduct = async () => {
       const products = await API.get('products/'+id);
       setProduct(products.data);
-      console.log(products.data)
       setLoaded(true);
   }
-
+  
   const PINCheck = (e) => {
     console.log(e.target.value)
     // Check if PIN Code is from your deliverable area or not.
@@ -93,11 +92,13 @@ function Product(props) {
             <div className="space-large"></div>
 
             <div className="row bott-product-button d-flex justify-content-center align-content-center">
+                {props.cart.cart.filter(item => item.id === product.id).length === 0 ?
                 <button onClick={()=> {props.addtoCart(product); setAdd(true);}} className="cart-button">Add to cart</button>
-                <button className="buy-button">Buy Now</button>
+                :<button onClick={()=> navigate('/cart')} className="cart-button">Go to Cart</button>}
+                <button onClick={()=> {props.addtoCart(product); navigate('/checkout')}} className="buy-button">Buy Now</button>
             </div>
             </>
-          :<ProductLoader/>
+          :<SingleProductLoader loaded={1}/>
         }
       </div>
     </>

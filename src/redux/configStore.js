@@ -20,7 +20,7 @@ export const configureStore = () => {
                 
             })
         }),
-        applyMiddleware(thunk,logger) //add logger for logging 
+        applyMiddleware(thunk) //add logger for logging 
     );
     return store;
 }

@@ -4,6 +4,7 @@ import { fetchOrders, fetchUser } from "../utils/api";
 import { connect } from "react-redux";
 import AccountLoader from "../components/ui/loaders/AccountLoader";
 import OrdersLoader from '../components/ui/loaders/OrdersLoader';
+import { withRouter } from "../utils/withRouter";
 
 const mapDispatchToProps = (dispatch) => {
   return{
@@ -30,6 +31,7 @@ render(){
   if (this.props.auth0.isLoading) {
     return <AccountLoader></AccountLoader>;
   }
+  console.log(this.props)
   if(this.props.auth0.isAuthenticated){
   if ( this.props.login.isLogged ) {
     
@@ -132,7 +134,7 @@ render(){
             </div>
             <div className="space-medium"></div>
             <div className="row">
-              <div className='col-5 btn'>Reorder</div>
+              <div className='col-5 btn' onClick={() => this.props.navigate('/track-order/' + item.id)}>Track Order</div>
               <div className='col-5 btn-ac'>Rate Order</div>
             </div>
           </div>
@@ -152,4 +154,4 @@ render(){
 }
 }
 
-export default withAuth0(connect(mapStateToProps,mapDispatchToProps)(Account));
+export default withRouter(withAuth0(connect(mapStateToProps,mapDispatchToProps)(Account)));

@@ -30,7 +30,7 @@ class Main extends Component{
               <Route exact path="/logout" element={ <Profile />}/>
               <Route exact path="/checkout" element={ <Checkout />}/>
               <Route exact path="/add-address" element={ <Address />}/>
-              <Route exact path="/track-order" element={ <TrackOrder />}/>
+              <Route exact path="/track-order/:id" element={ <TrackOrder />}/>
             </Routes>
             </>
         );
