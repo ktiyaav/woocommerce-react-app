@@ -17,7 +17,7 @@ const SingleProductLoader = props => {
       {...props}
     >
     <rect x="15" y="100" rx="3" ry="3" width={width-30} height="400" />
-    <rect x="15" y="520" rx="3" ry="3" width={width-30} height="50" />
+    <rect x="15" y="520" rx="3" ry="3" width={width/3} height="50" />
     <rect x="15" y="590" rx="3" ry="3" width={width-30} height="50" />
     </ContentLoader>
   )
