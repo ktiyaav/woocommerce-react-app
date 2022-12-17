@@ -3,6 +3,7 @@ import {ArrowLeft} from 'react-feather';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addtoCart } from '../redux/ActionCreators';
+import { removeFromCart } from '../redux/ActionCreators';
 import { withAuth0 } from '@auth0/auth0-react';
 import {withRouter}from '../utils/withRouter';
 import { fetchUser } from '../utils/api';
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return{
     addtoCart :(product) => {dispatch(addtoCart(product))},
+    removeFromCart :(id) => {dispatch(removeFromCart(id))},
     fetchUser: (user) => (dispatch(fetchUser(user)))
   }
 }
@@ -120,7 +122,7 @@ class Cart extends Component{
                         <div className="col-5 my-auto name" >{item.name}</div>
                         <div className="col-3 m-auto no-padding" >
                           <div className="row qty no-padding">
-                            <div className="col-4 quantity-box"><span>-</span></div>
+                            <div className="col-4 quantity-box"><span onClick={() => this.props.removeFromCart(item.id)}>-</span></div>
                             <div className="col-4 quantity-box">{item.qty}</div>
                             <div className="col-4 quantity-box"><span onClick={() => this.props.addtoCart(item)}>+</span></div>
                           </div>

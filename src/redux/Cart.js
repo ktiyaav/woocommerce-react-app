@@ -1,20 +1,21 @@
+import { Action } from '@remix-run/router';
 import * as ActionTypes from './ActionTypes';
 
 export const Cart = (state = {
         isLoading: false,
         errMess: null,
         cart: [{
-            "id": 1732,
-            "name": "Stripe crew knit",
-            "link": "https://jufy.shaktisaurav.com/product/stripe-crew-knit/",
-            "regularPrice": 420,
-            "price": 420,
+            "id": 1731,
+            "name": "Stanmore Speakers",
+            "link": "https://jufy.shaktisaurav.com/product/stanmore-speakers/",
+            "regularPrice": 199,
+            "price": 199,
             "storeName": "FokatBaba",
-            "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2021/02/1-38.jpg",
+            "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2021/02/1-1.jpg",
             "qty": 1
         }],
-        total : 80,
-        currency: '₹'
+        total : 0,
+        currency: ''
     }, action) => {
     switch(action.type) {
         
@@ -50,6 +51,15 @@ export const Cart = (state = {
                 cart: [...state.cart, product],
                 total: +state.total + +product.price
             };
+        case ActionTypes.REMOVE_FROM_CART:
+            let NewCart = state.cart.map( item => ( 
+                item.id === action.payload 
+                ? {...item,qty: item.qty -1}
+                : item))
+            NewCart = NewCart.filter(item => item.qty >= 1)
+            
+            return { ...state, isLoading: false, cart: NewCart}
+
         case ActionTypes.CART_LOADING:
             return {...state, isLoading:true, errMess:null};
         

@@ -7,6 +7,10 @@ export const addtoCart = (product) => ({
 export const clearCart = () => ({
     type: ActionTypes.CLEAR_CART
 })
+export const removeFromCart = (id) => ({
+    type: ActionTypes.REMOVE_FROM_CART,
+    payload: id
+})
 export const addUser = (user) => ({
     type : ActionTypes.ADD_USER,
     payload : user
