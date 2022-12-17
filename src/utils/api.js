@@ -3,8 +3,7 @@ import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 import { BASEURL, CONSUMER_KEY, CONSUMER_SECRET, WCVERSION, WCFM } from "../config/constants";
 import { addStores, addUser, ordersLoading } from "../redux/ActionCreators";
 import { clearCart, addOrders, addAddress, addressFailed } from "../redux/ActionCreators";
-import { push } from 'react-router-redux';
-import { Navigate } from 'react-router-dom';
+import createRazorPayOrder from './razorpay';
 
 const WOOAPI = (NAMESPACE) => new WooCommerceRestApi({
     url: BASEURL,
@@ -148,7 +147,7 @@ export const createOrder =(payby, user,items, navigate) => (dispatch) => {
         }
         console.log(response.data)
         navigate('/track-order/'+ response.data.id)
-        // if(payby === 'RAZORPAY') return createRazorPayOrder(options);
+        if(payby === 'RAZORPAY') return createRazorPayOrder(options);
     })
     .catch((error) => {
         console.log(error);

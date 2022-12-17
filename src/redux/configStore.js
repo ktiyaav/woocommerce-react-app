@@ -8,6 +8,9 @@ import { Orders } from './Orders';
 import { Address } from './Address';
 import { Stores } from "./Stores";
 
+//Fetching saved state from localstorage if any.
+const persistedState = localStorage.getItem('state') ? JSON.parse(localStorage.getItem('state')) : {}
+
 export const configureStore = () => {
     const store = createStore(
         combineReducers({
@@ -20,7 +23,13 @@ export const configureStore = () => {
                 
             })
         }),
-        applyMiddleware(thunk) //add logger for logging 
+        persistedState,
+        applyMiddleware(thunk,logger) //Added logger for logging
     );
+
+    store.subscribe(() => {
+        //Saving State to Browser Local Storage : Whenever a state is changed, it will get saved in localstorage.
+        localStorage.setItem('state', JSON.stringify(store.getState()))
+    })
     return store;
 }

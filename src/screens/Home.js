@@ -29,12 +29,6 @@ class Home extends Component{
       this.props.fetchUser(this.user.email)
     }
     this.props.fetchVendors();
-    // setTimeout(()=>{
-    //   this.setState({
-    //     ...this.props.store, 
-    //     isLoading : false
-    // })
-    // },2000)
   }
 
   componentDidUpdate(){

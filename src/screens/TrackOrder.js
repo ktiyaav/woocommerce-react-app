@@ -52,7 +52,7 @@ class TrackOrder extends Component{
         <>
         <Navbar title='Track Order' description={`#${this.state.orderId}`} path='/account'/>
         <div className="row checkout order-placed">
-          <TrackOrderMessage message="Order Placed Succesfully!" description="Sit back & Enjoy while we deliver your order!"/>
+        <TrackOrderMessage message="Order Placed Succesfully!" description="Sit back & Enjoy while we deliver your order!"/>
         </div>
         <div className='row proceed-checkout m-auto'>
             <div className='row no-padding m-auto'>

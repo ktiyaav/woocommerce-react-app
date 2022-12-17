@@ -3,7 +3,16 @@ import * as ActionTypes from './ActionTypes';
 export const Cart = (state = {
         isLoading: false,
         errMess: null,
-        cart: [],
+        cart: [{
+            "id": 1732,
+            "name": "Stripe crew knit",
+            "link": "https://jufy.shaktisaurav.com/product/stripe-crew-knit/",
+            "regularPrice": 420,
+            "price": 420,
+            "storeName": "FokatBaba",
+            "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2021/02/1-38.jpg",
+            "qty": 1
+        }],
         total : 80,
         currency: '₹'
     }, action) => {

@@ -64,8 +64,9 @@ function Product(props) {
 
             <div className="p-medium">
               <div className="widget-title">Select Size</div>
-              <form className="delivery-check">
+                <form className="delivery-check">
                   <select></select>
+                  {/* Handle Attributes & Addons here */}
                 </form>
                 <p className="fw-light">Select which size you want!</p>
             </div>
