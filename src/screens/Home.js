@@ -50,7 +50,7 @@ class Home extends Component{
       <Banner />
       <CategorySlider title="" fetch="categories" />
       <StoresList stores={this.props.stores}></StoresList>
-      <div className='space-large'></div>
+      <div className='space-large bg-aqua'></div>
       </div>
     )
   }
