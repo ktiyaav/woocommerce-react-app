@@ -37,6 +37,7 @@ export const VENDOR ={
 
 export const RAZORPAY_KEY = 'rzp_test_58XDAM9EfnRA0Y';
 export const RAZORPAY_SECRET = '8yJe7HussRHkmNyC7dSfZegY';
+export const RAZORPAY_CREATE_ORDER = 'http://localhost:1337/create-order';
 
 export const BASEURL = 'https://jufy.shaktisaurav.com/';
 export const CONSUMER_KEY = 'ck_b997ecf7ecae05c0deffb00166fc19203a5b5622';

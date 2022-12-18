@@ -95,9 +95,11 @@ export const createUser = (user) => (dispatch) => {
 // ORDER
 const updateOrder = (orderId, action) => {
   //Update order with payment complete or failed status.
+  console.log(orderId, action)
   return orderId;
 }
-export const createOrder =(payby, user,items, navigate) => (dispatch) => {
+
+export const createOrder = (payby, user, items, navigate) => (dispatch) => {
     dispatch(ordersLoading());
     const orderData = {
         payment_method: "bacs",
@@ -141,24 +143,29 @@ export const createOrder =(payby, user,items, navigate) => (dispatch) => {
             quantity: item.qty
         })
     ))
+    let orderId = ''
     API.post("orders", orderData)
     .then((response) => {
+        orderId = response.data.id
         dispatch(clearCart())
         const options = { 
-          // wooId: response.data.id,
           amount: parseInt(response.data.total) * 100,
           currency: 'INR',
           reciept: response.data.id
         }
-        if(payby === 'RAZORPAY') return (options, response.data.id);
+        //If not razorpay then it will not proceed and directly load track order page. Will handle in a better way later.
+        if(payby === 'RAZORPAY')
+        return {
+          options: options,
+          wooId: response.data.id
+        }
     })
-    .then((options, wooId) => createRazorPayOrder(options,wooId))
-    .then(options => proceedToPayment(options))
-    .then(options => verifyPayment(options))
-    .then(response => updateOrder(response))
-    .then(response => this.props.navigate('/track-order/'+response))
+    .then(response => createRazorPayOrder(response))
+    .then(response =>  proceedToPayment({...response, name: user.first_name, phone: user.billing.phone, email: user.billing.email }))
+    .then(response => verifyPayment(response))
+    .then(response => navigate('/track-order/'+response.wooId))
     .catch((error) => {
-        console.log(error);
+        navigate('/track-order/'+orderId)
     });
 }
 

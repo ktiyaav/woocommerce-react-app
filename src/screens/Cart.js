@@ -23,8 +23,11 @@ const mapDispatchToProps = (dispatch) => {
 
 class Cart extends Component{
   componentDidUpdate(){
+    console.log(this.props)
+    console.log(this.props.auth0)
     const { user, isAuthenticated, isLoading, logout } = this.props.auth0;
     if(isAuthenticated && !this.props.login.isLogged){
+      console.log('Fetch')
       this.props.fetchUser(user)
     }
   }
@@ -105,10 +108,10 @@ class Cart extends Component{
             <div className='banner-g'>
               <div className='banner'>
                 <div className='text'>
-                  ₹ 130 total savings with
+                  ₹ 10 total savings with
                 </div>
                 <div className='text-description'>
-                WELCOME50 + FREE Delivery
+                WELCOME50 - FREE Delivery
                 </div>
               </div>
             </div>
