@@ -1,8 +1,29 @@
-#Woocommerce React App
+# [WooCommerce React mobile Theme](https://wooreact.shaktisaurav.com) :rocket:
+[![Project Status: Active.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+![Stars](https://img.shields.io/github/stars/7IG3R/woocommerce-react-app?label=%E2%AD%90%20Stars)
+![Forks](https://img.shields.io/github/forks/7IG3R/woocommerce-react-app?color=%23ff69b4)
+![Contributors](https://img.shields.io/github/contributors/7IG3R/woocommerce-react-app?color=blue)
+![Follow](https://img.shields.io/github/followers/7IG3R?label=Follow&style=social)
 
+> This is a WooCommerce mobile theme, built with React JS
 It Looks Something like this: 
 
+📱 [Demo](https://wooreact.shaktisaurav.com)
 ![Woocommerce React App](demo.gif)
+
+
+
+# Features:
+
+1. WooCommerce Store with mobile design built using ReactJs and Redux( Having: Home Page, Shop/Category Page, Products Page, Single Product Page, Cart Functions, Cart Page, Checkout with COD and Razorpay integration, Track order and Profile page, Add Address page).
+2. Using Auth0 authentication, you can use social media login and many more using this.
+3. Components like Product slider, category slider
+4. Store List component to show stores from WCFM multivendor store
+5. Multiple loaders like Single Product loader, Products loader, category loader, store loader, profile loader, orders loader and generic loader
+6. Razorpay payment gateway integration
+7. Easy setup using config. Just update it and half ready to use. see : /src/config/constants.js
+8. Its a kind of boilerplate which you can use to build your own woocommerce app, customise further according to your requirements.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
