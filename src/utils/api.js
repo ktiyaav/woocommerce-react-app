@@ -3,7 +3,7 @@ import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
 import { BASEURL, CONSUMER_KEY, CONSUMER_SECRET, WCVERSION, WCFM } from "../config/constants";
 import { addStores, addUser, ordersLoading } from "../redux/ActionCreators";
 import { clearCart, addOrders, addAddress, addressFailed } from "../redux/ActionCreators";
-import createRazorPayOrder from './razorpay';
+import {createRazorPayOrder, proceedToPayment, verifyPayment} from './razorpay';
 
 const WOOAPI = (NAMESPACE) => new WooCommerceRestApi({
     url: BASEURL,
@@ -93,6 +93,10 @@ export const createUser = (user) => (dispatch) => {
 }
 
 // ORDER
+const updateOrder = (orderId, action) => {
+  //Update order with payment complete or failed status.
+  return orderId;
+}
 export const createOrder =(payby, user,items, navigate) => (dispatch) => {
     dispatch(ordersLoading());
     const orderData = {
@@ -141,25 +145,29 @@ export const createOrder =(payby, user,items, navigate) => (dispatch) => {
     .then((response) => {
         dispatch(clearCart())
         const options = { 
+          // wooId: response.data.id,
           amount: parseInt(response.data.total) * 100,
-          currency: response.data.currency,
+          currency: 'INR',
           reciept: response.data.id
         }
-        console.log(response.data)
-        navigate('/track-order/'+ response.data.id)
-        if(payby === 'RAZORPAY') return createRazorPayOrder(options);
+        if(payby === 'RAZORPAY') return (options, response.data.id);
     })
+    .then((options, wooId) => createRazorPayOrder(options,wooId))
+    .then(options => proceedToPayment(options))
+    .then(options => verifyPayment(options))
+    .then(response => updateOrder(response))
+    .then(response => this.props.navigate('/track-order/'+response))
     .catch((error) => {
         console.log(error);
     });
 }
 
 export const fetchOrder = async (orderID) => {
-  console.log('hii')
   await API.get("orders/" + orderID)
   .then(response => { return response.data })
   .catch(error => console.log(error))
 }
+
 export const fetchOrders = (user) => (dispatch) => {
     API.get("orders?customer="+user.id)
     .then((response) => {

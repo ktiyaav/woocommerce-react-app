@@ -8,7 +8,7 @@ export const CategoryLoader = props => {
   let i = 60
   let list = []
   while (i<width) {
-    list.push(<circle cx={i} cy="60" r="50" />)
+    list.push(<circle cx={i} cy="60" r="50" key={i}/>)
     i += 120
   }
   return (

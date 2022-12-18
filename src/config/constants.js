@@ -35,8 +35,8 @@ export const VENDOR ={
   ISOFFLINE: 'is_store_offline',
 }
 
-export const RAZORPAY_KEY = 'rzp_test_1t76aViqjCONf7';
-export const RAZORPAY_SECRET = 'nLWfS9Ie3RN5VUHusCZpK54H';
+export const RAZORPAY_KEY = 'rzp_test_58XDAM9EfnRA0Y';
+export const RAZORPAY_SECRET = '8yJe7HussRHkmNyC7dSfZegY';
 
 export const BASEURL = 'https://jufy.shaktisaurav.com/';
 export const CONSUMER_KEY = 'ck_b997ecf7ecae05c0deffb00166fc19203a5b5622';
@@ -47,3 +47,7 @@ export const PLUGIN = '';
 export const WCVERSION = "wc/v2";
 export const WCFM = "wcfmmp/v1";
 export const WCANALYTICS = "wc-analytics";
+
+
+//APP constants
+export const SITENAME = 'JUFY';

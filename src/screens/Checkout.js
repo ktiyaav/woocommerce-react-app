@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { createOrder } from "../utils/api";
 import { withRouter } from '../utils/withRouter';
 import { withAuth0 } from "@auth0/auth0-react";
@@ -26,12 +25,8 @@ const mapStateToProps = (state) => {
 class Checkout extends Component{
     
     componentDidMount(){
-        console.log(this.props)
         const { loginWithRedirect } = this.props.auth0;
-        if(this.props.login.isLogged){
-            if(this.props.cart.cart.length === 0) this.props.navigate('/cart')
-        }
-        else{
+        if(!this.props.login.isLogged){
             loginWithRedirect()
         }
         this.props.ordersLoaded();
@@ -49,6 +44,7 @@ class Checkout extends Component{
     render(){
         return(
         <>
+        {/* {(this.props.cart.cart.length === 0) ? this.props.navigate('/cart') : null} */}
         {this.props.orders.isLoading ? <PaymentProcessing></PaymentProcessing> : null }
         <Navbar path={'/cart'} title={'Checkout'} description={this.props.cart.cart.length + ' ITEMS | TOTAL : ' + this.props.cart.currency + ' ' + this.props.cart.total} />
         <div className="row checkout order-placed">

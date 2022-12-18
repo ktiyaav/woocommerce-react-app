@@ -4,16 +4,7 @@ import * as ActionTypes from './ActionTypes';
 export const Cart = (state = {
         isLoading: false,
         errMess: null,
-        cart: [{
-            "id": 1731,
-            "name": "Stanmore Speakers",
-            "link": "https://jufy.shaktisaurav.com/product/stanmore-speakers/",
-            "regularPrice": 199,
-            "price": 199,
-            "storeName": "FokatBaba",
-            "image": "https://jufy.shaktisaurav.com/wp-content/uploads/2021/02/1-1.jpg",
-            "qty": 1
-        }],
+        cart: [],
         total : 0,
         currency: ''
     }, action) => {

@@ -24,7 +24,7 @@ export const configureStore = () => {
             })
         }),
         persistedState,
-        applyMiddleware(thunk,logger) //Added logger for logging
+        applyMiddleware(thunk) //Added logger for logging
     );
 
     store.subscribe(() => {
