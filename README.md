@@ -1,14 +1,15 @@
 # [WooCommerce React mobile Theme](https://wooreact.shaktisaurav.com) :rocket:
 [![Project Status: Active.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-![Stars](https://img.shields.io/github/stars/7IG3R/woocommerce-react-app?label=%E2%AD%90%20Stars)
-![Forks](https://img.shields.io/github/forks/7IG3R/woocommerce-react-app?color=%23ff69b4)
-![Contributors](https://img.shields.io/github/contributors/7IG3R/woocommerce-react-app?color=blue)
-![Follow](https://img.shields.io/github/followers/7IG3R?label=Follow&style=social)
+![Stars](https://img.shields.io/github/stars/X7IG3R/woocommerce-react-app?label=%E2%AD%90%20Stars)
+![Forks](https://img.shields.io/github/forks/X7IG3R/woocommerce-react-app?color=%23ff69b4)
+![Contributors](https://img.shields.io/github/contributors/X7IG3R/woocommerce-react-app?color=blue)
+![Follow](https://img.shields.io/github/followers/X7IG3R?label=Follow&style=social)
 
 > This is a WooCommerce mobile theme, built with React JS
 It Looks Something like this: 
 
 📱 [Demo](https://wooreact.shaktisaurav.com)
+
 ![Woocommerce React App](demo.gif)
 
 
